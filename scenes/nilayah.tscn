@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://k8un6qbsdwa6"]
+[gd_scene load_steps=3 format=3 uid="uid://fnufncqpxjet"]
+
+[ext_resource type="PackedScene" uid="uid://bcgush1uxt16t" path="res://Nilayah's Working Folder/player.tscn" id="1_s2nav"]
+[ext_resource type="PackedScene" uid="uid://kv2kj47v34g6" path="res://Nilayah's Working Folder/pickup_item.tscn" id="2_fual7"]
 
 [node name="Nilayah" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_s2nav")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="pickup_item" parent="." instance=ExtResource("2_fual7")]
+position = Vector2(-81, 48)

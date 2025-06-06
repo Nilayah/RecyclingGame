@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcgush1uxt16t"]
+
+[ext_resource type="Texture2D" uid="uid://ctonnad7mmydx" path="res://assets/characters/girl.png" id="1_5huhj"]
+[ext_resource type="Script" uid="uid://du06wp0j6mk2q" path="res://Nilayah's Working Folder/player.gd" id="1_n6l1i"]
+[ext_resource type="Texture2D" uid="uid://d04dwomhkkt4t" path="res://assets/bins/recycling bin.png" id="3_4syal"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6c8t3"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6l1i"]
+atlas = ExtResource("1_5huhj")
+region = Rect2(0, 0, 16, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4syal"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6l1i")
+}],
+"loop": true,
+"name": &"test",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4syal"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_n6l1i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_6c8t3")
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4syal")
+animation = &"test"
+autoplay = "test"
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -1)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_4syal")
+
+[node name="PickUpRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUpRange"]
+shape = SubResource("CircleShape2D_4syal")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="area_entered" from="PickUpRange" to="." method="_on_pick_up_range_area_entered"]
+[connection signal="area_exited" from="PickUpRange" to="." method="_on_pick_up_range_area_exited"]
