@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs0jueoucrtrw"]
+
+[ext_resource type="Script" uid="uid://jsauuy5r2xcd" path="res://Zeke Working Folder/scripts/zeke's_player.gd" id="1_pci73"]
+[ext_resource type="PackedScene" uid="uid://dbxr0i503vnw6" path="res://Zeke Working Folder/scenes/zeke's_player_animations.tscn" id="2_kmq7p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmq7p"]
+size = Vector2(12, 15.5)
+
+[node name="Zeke\'sPlayer" type="CharacterBody2D"]
+script = ExtResource("1_pci73")
+
+[node name="zeke\'s_player_animations" parent="." instance=ExtResource("2_kmq7p")]
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.25)
+shape = SubResource("RectangleShape2D_kmq7p")
