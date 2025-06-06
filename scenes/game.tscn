@@ -5,5 +5,4 @@
 [node name="game" type="Node2D"]
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-7, 1)
 texture = ExtResource("1_uwrxv")

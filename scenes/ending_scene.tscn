@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://ww5x24speksg"]
+
+[ext_resource type="Script" uid="uid://wrlul6su5i4o" path="res://scenes/ending_scene_script.gd" id="1_5gtp6"]
+[ext_resource type="Texture2D" uid="uid://s3and7skdnsp" path="res://assets/planets/planet03.png" id="2_agp5w"]
+[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_u14vp"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_5gtp6")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = -0.626736
+anchor_top = -1.0571
+anchor_right = 1.3559
+anchor_bottom = 1.38889
+offset_left = -150.0
+offset_top = 86.0009
+offset_right = 246.0
+offset_bottom = 462.001
+color = Color(0.97, 0.97, 0.97, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.395
+anchor_right = 0.5
+anchor_bottom = 0.395
+offset_left = -240.0
+offset_top = -157.96
+offset_right = 259.0
+offset_bottom = 266.04
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_u14vp")
+theme_override_font_sizes/font_size = 34
+text = "Great job recycling         !
+Recycling keeps the earth clean. 80% of the plastic bottles end up in landfills. We need more recycling heros, like YOU!"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Planet03" type="Sprite2D" parent="CanvasLayer/Label"]
+z_index = 1
+position = Vector2(-62.2107, 157.721)
+rotation = 2.9133
+scale = Vector2(0.136435, 0.13728)
+texture = ExtResource("2_agp5w")
+
+[node name="Label2" type="Label" parent="CanvasLayer/Label"]
+offset_left = 320.0
+offset_top = 38.0
+offset_right = 456.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0, 0.72549, 0, 0.968627)
+theme_override_fonts/font = ExtResource("2_u14vp")
+theme_override_font_sizes/font_size = 34
+text = "HERO"
+horizontal_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
