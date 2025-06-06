@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1bvd0ri3lvra"]
+
+[ext_resource type="Texture2D" uid="uid://cjqgurcrbttsm" path="res://icon.svg" id="1_1ft0k"]
+[ext_resource type="Script" uid="uid://10u00687wggp" path="res://olivia/scripts/test_character.gd" id="1_tb1xc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tb1xc"]
+size = Vector2(19.5, 19)
+
+[node name="TestCharacter" type="CharacterBody2D"]
+script = ExtResource("1_tb1xc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.8147e-06, -12)
+scale = Vector2(0.183594, 0.183594)
+texture = ExtResource("1_1ft0k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_tb1xc")

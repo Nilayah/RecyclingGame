@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkeamqddr6o8j"]
+
+[sub_resource type="TileSet" id="TileSet_h4hhb"]
+
+[node name="Room2" type="Node2D"]
+
+[node name="Flooring" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_h4hhb")
+
+[node name="Carpet" type="TileMapLayer" parent="Flooring"]
+
+[node name="Walls" type="TileMapLayer" parent="Flooring"]
+
+[node name="DecorStandard" type="TileMapLayer" parent="Flooring/Walls"]
+
+[node name="ObjectsStandard" type="TileMapLayer" parent="Flooring/Walls/DecorStandard"]
+
+[node name="DecorOffset" type="TileMapLayer" parent="Flooring/Walls"]
+
+[node name="ObjectsOffset" type="TileMapLayer" parent="Flooring/Walls/DecorOffset"]
+
+[node name="Camera2D" type="Camera2D" parent="."]

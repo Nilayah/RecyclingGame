@@ -2,18 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://dfg40h10ubbo7"
-
-path="res://.godot/imported/planet00.png-3296ffdeff0776eba0980b7eb7b00eb3.ctex"
+uid="uid://dncd0rriaahgo"
+path="res://.godot/imported/ModCityTiles.png-9e6b22b5b09aa965c742890abc28c705.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/planets/planet00.png"
-dest_files=["res://.godot/imported/planet00.png-3296ffdeff0776eba0980b7eb7b00eb3.ctex"]
+source_file="res://olivia/assets/ModCityTiles.png"
+dest_files=["res://.godot/imported/ModCityTiles.png-9e6b22b5b09aa965c742890abc28c705.ctex"]
 
 [params]
 
