@@ -2,18 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://dfg40h10ubbo7"
-
-path="res://.godot/imported/planet00.png-3296ffdeff0776eba0980b7eb7b00eb3.ctex"
+uid="uid://dkwhvphb8gput"
+path="res://.godot/imported/tilemap.png-80220315d1ecacad895cc54f05ed673d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/planets/planet00.png"
-dest_files=["res://.godot/imported/planet00.png-3296ffdeff0776eba0980b7eb7b00eb3.ctex"]
+source_file="res://assets/bins and recycle items/trashbin/Tilemap/tilemap.png"
+dest_files=["res://.godot/imported/tilemap.png-80220315d1ecacad895cc54f05ed673d.ctex"]
 
 [params]
 

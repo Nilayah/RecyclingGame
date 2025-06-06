@@ -2,18 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://dfg40h10ubbo7"
-
-path="res://.godot/imported/planet00.png-3296ffdeff0776eba0980b7eb7b00eb3.ctex"
+uid="uid://6b52svsax03h"
+path="res://.godot/imported/recycling bin.png-d8b2ff929228d2fc2f5da6f433a3b09c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/planets/planet00.png"
-dest_files=["res://.godot/imported/planet00.png-3296ffdeff0776eba0980b7eb7b00eb3.ctex"]
+source_file="res://assets/bins and recycle items/recycling bin.png"
+dest_files=["res://.godot/imported/recycling bin.png-d8b2ff929228d2fc2f5da6f433a3b09c.ctex"]
 
 [params]
 
