@@ -1,3 +1,24 @@
-[gd_scene load_steps=0 format=3 uid="uid://k8un6qbsdwa6"]
+[gd_scene load_steps=4 format=3 uid="uid://fnufncqpxjet"]
+
+[ext_resource type="PackedScene" uid="uid://bcgush1uxt16t" path="res://Nilayah's Working Folder/player.tscn" id="1_s2nav"]
+[ext_resource type="PackedScene" uid="uid://kv2kj47v34g6" path="res://Nilayah's Working Folder/pickup_item.tscn" id="2_fual7"]
+[ext_resource type="PackedScene" uid="uid://desjhfh6mx7ar" path="res://Nilayah's Working Folder/bin.tscn" id="3_hhndn"]
 
 [node name="Nilayah" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_s2nav")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="Bin" parent="." instance=ExtResource("3_hhndn")]
+position = Vector2(67, 48)
+scale = Vector2(0.5, 0.5)
+
+[node name="pickup_item" parent="." instance=ExtResource("2_fual7")]
+position = Vector2(-81, 48)
+
+[node name="pickup_item2" parent="." instance=ExtResource("2_fual7")]
+position = Vector2(113, 28)
+
+[connection signal="body_entered" from="pickup_item" to="Player" method="_on_pickup_item_body_entered"]
