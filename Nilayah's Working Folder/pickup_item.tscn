@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://kv2kj47v34g6"]
+
+[ext_resource type="Texture2D" uid="uid://d04dwomhkkt4t" path="res://assets/bins/recycling bin.png" id="1_q444d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q444d"]
+radius = 13.0
+
+[node name="pickup_item" type="Area2D" groups=["pick_up"]]
+scale = Vector2(0.3, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -37)
+texture = ExtResource("1_q444d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -16)
+shape = SubResource("CircleShape2D_q444d")
