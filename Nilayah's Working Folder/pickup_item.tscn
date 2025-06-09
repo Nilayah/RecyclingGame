@@ -7,14 +7,15 @@
 radius = 6.66667
 height = 33.3333
 
-[node name="pickup_item" type="Area2D" groups=["pick_up"]]
+[node name="pickup_item" type="Area2D"]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_ltp3i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -30)
 texture = ExtResource("1_q444d")
-hframes = 27
+region_enabled = true
+region_rect = Rect2(1, -1, 19, 65)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -20)
@@ -22,3 +23,4 @@ shape = SubResource("CapsuleShape2D_ltp3i")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="ready" from="." to="." method="_on_ready"]

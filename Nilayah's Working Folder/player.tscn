@@ -42,7 +42,8 @@ visible = false
 position = Vector2(0, 4)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_4syal")
-hframes = 27
+region_enabled = true
+region_rect = Rect2(0, 0, 19, 64)
 
 [node name="PickUpRange" type="Area2D" parent="."]
 position = Vector2(9, -2)
