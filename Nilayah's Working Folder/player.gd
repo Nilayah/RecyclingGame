@@ -23,8 +23,6 @@ var playback : AnimationNodeStateMachinePlayback
 var can_move: bool = false
 
 func _ready():
-	timer.timeout.connect(_on_timer_timeout)
-	
 	# Pick Up / Drop Item
 	item_spr.hide() 
 	

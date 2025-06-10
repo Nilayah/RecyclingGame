@@ -2,11 +2,20 @@ extends Area2D
 
 @export var bin_type: BinType = BinType.TRASHBIN
 
+@onready var sprite: Sprite2D = $Sprite2D
+
 const PickupItem = preload("res://Nilayah's Working Folder/pickup_item.gd")
 
 var player: Player = null
 
 enum BinType { TRASHBIN, RECYCLINGBIN }
+
+func _on_ready() -> void:
+	match bin_type:
+		BinType.TRASHBIN:
+			sprite.texture = load("res://assets/bins/trash_bin.png")
+		BinType.RECYCLINGBIN:
+			sprite.texture = load("res://assets/bins/recycling_bin.png")
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
