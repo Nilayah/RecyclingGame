@@ -30,6 +30,3 @@ func _process(delta: float) -> void:
 		if player.carrying_item == false:
 			queue_free()
 			player.pickup_item(item_type)
-
-func _on_ready() -> void:
-	pass # Replace with function body.
