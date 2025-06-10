@@ -81,7 +81,6 @@ func pickup_item(item_type):
 	item_spr.show()
 
 func drop_item():
-	print("drop item")
 	remove_item_from_hand()
 	var item = pick_up.instantiate()
 	item.item_type = current_item_type
