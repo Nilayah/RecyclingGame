@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dr5jfnmuutry3"
+path="res://.godot/imported/error_005.ogg-faf4f903743b912ca10a4f6a3bdf8466.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/sfx resources/Audio/error_005.ogg"
+dest_files=["res://.godot/imported/error_005.ogg-faf4f903743b912ca10a4f6a3bdf8466.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

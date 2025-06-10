@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bj14cx7gtwirs"
+path="res://.godot/imported/RECYCLE.ogg-dd0ca2f98b56335ef8e9c133c935d05c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/selected sfx/RECYCLE.ogg"
+dest_files=["res://.godot/imported/RECYCLE.ogg-dd0ca2f98b56335ef8e9c133c935d05c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

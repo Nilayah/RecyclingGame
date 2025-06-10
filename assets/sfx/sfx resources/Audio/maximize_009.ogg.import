@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bh3d2vtumrcc3"
+path="res://.godot/imported/maximize_009.ogg-b93fc1090b9298671376c308f0b003bf.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/sfx resources/Audio/maximize_009.ogg"
+dest_files=["res://.godot/imported/maximize_009.ogg-b93fc1090b9298671376c308f0b003bf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
