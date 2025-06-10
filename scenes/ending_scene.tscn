@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ww5x24speksg"]
 
-[ext_resource type="Script" uid="uid://wrlul6su5i4o" path="res://scenes/ending_scene_script.gd" id="1_5gtp6"]
+[ext_resource type="Script" path="res://scenes/ending_scene_script.gd" id="1_5gtp6"]
 [ext_resource type="Texture2D" uid="uid://s3and7skdnsp" path="res://assets/planets/planet03.png" id="2_agp5w"]
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_u14vp"]
 
@@ -8,7 +8,7 @@
 script = ExtResource("1_5gtp6")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 45.0
 one_shot = true
 autostart = true
 
@@ -54,6 +54,7 @@ scale = Vector2(0.136435, 0.13728)
 texture = ExtResource("2_agp5w")
 
 [node name="Label2" type="Label" parent="CanvasLayer/Label"]
+layout_mode = 0
 offset_left = 320.0
 offset_top = 38.0
 offset_right = 456.0
