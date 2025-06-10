@@ -6,7 +6,7 @@ class_name Player
 @onready var item_spr: Sprite2D = $ItemSprite
 
 @export var SPEED = 100
-@export var animation_tree : AnimationTree
+@onready var animation_tree: AnimationTree = $AnimationTree
 
 const PickupItem = preload("res://Nilayah's Working Folder/pickup_item.gd")
 
