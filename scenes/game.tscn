@@ -1,14 +1,43 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1yh1pdnlyxkb"]
+[gd_scene load_steps=20 format=3 uid="uid://c1yh1pdnlyxkb"]
 
+[ext_resource type="Script" uid="uid://bhtwl1x4qxwdc" path="res://olivia/scripts/game.gd" id="1_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://bkeamqddr6o8j" path="res://olivia/scenes/room_2.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cfs088008gjbq" path="res://olivia/scenes/starting_dialogue.tscn" id="2_iywne"]
 [ext_resource type="PackedScene" uid="uid://cbfdx8yyq8huc" path="res://Nilayah's Working Folder/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://desjhfh6mx7ar" path="res://Nilayah's Working Folder/bin.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://kv2kj47v34g6" path="res://Nilayah's Working Folder/pickup_item.tscn" id="4_lbhrr"]
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_u5sy4"]
+[ext_resource type="FontFile" uid="uid://rdldim0q2d46" path="res://olivia/assets/Kenney Future Narrow.ttf" id="5_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://48x2fnmw7a1q" path="res://olivia/assets/E.png" id="6_vtaks"]
+[ext_resource type="Texture2D" uid="uid://dnjbaqtlfdxmr" path="res://olivia/assets/W.png" id="7_rysoc"]
 [ext_resource type="PackedScene" uid="uid://dm21q2g1k63vp" path="res://olivia/scenes/trash_dialogue.tscn" id="7_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://crpx3vmn3sy7c" path="res://olivia/assets/A.png" id="8_ssvqc"]
+[ext_resource type="Texture2D" uid="uid://4pjkjr8v7jrq" path="res://olivia/assets/S.png" id="9_264po"]
+[ext_resource type="Texture2D" uid="uid://c0q8occ25o8o3" path="res://olivia/assets/D.png" id="10_1kice"]
+[ext_resource type="Texture2D" uid="uid://c7f7h7y5i4s1r" path="res://olivia/assets/DownArrow.png" id="11_5newe"]
+[ext_resource type="Texture2D" uid="uid://c4jijjjf8q8sr" path="res://olivia/assets/LeftArrow.png" id="12_37s47"]
+[ext_resource type="Texture2D" uid="uid://uch0gbn4fior" path="res://olivia/assets/RightArrow.png" id="13_bt5mj"]
+[ext_resource type="Texture2D" uid="uid://dusedm0nogvhi" path="res://olivia/assets/UpArrow.png" id="14_e1j6l"]
+
+[sub_resource type="GDScript" id="GDScript_264po"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="game" type="Node2D"]
+script = ExtResource("1_ssvqc")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 16.0
 
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
 z_index = 5
@@ -21,7 +50,7 @@ zoom = Vector2(5, 5)
 [node name="Starting Dialogue" parent="Player" instance=ExtResource("2_iywne")]
 position = Vector2(-67, -32)
 
-[node name="Room3" parent="." instance=ExtResource("1_uwrxv")]
+[node name="Room" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(0, -6)
 
 [node name="Labels" type="Node" parent="."]
@@ -53,73 +82,168 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="PressE" type="Label" parent="Labels"]
-offset_left = -137.0
-offset_top = -14.0
-offset_right = -85.0
-offset_bottom = 38.0
-scale = Vector2(0.6, 0.6)
+offset_left = -136.0
+offset_top = -12.0
+offset_right = 24.0
+offset_bottom = 85.0
+scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_u5sy4")
-theme_override_font_sizes/font_size = 8
-text = "Press e to pick up bottle"
+theme_override_constants/line_spacing = -3
+theme_override_fonts/font = ExtResource("5_0tnpc")
+theme_override_font_sizes/font_size = 24
+text = "Press e 
+to pick 
+up bottle"
 autowrap_mode = 2
+script = SubResource("GDScript_264po")
 
 [node name="bathroom" type="Label" parent="Labels"]
-offset_left = -79.0
-offset_top = 69.0
-offset_right = 100.0
-offset_bottom = 92.0
-scale = Vector2(0.6, 0.6)
+offset_left = -104.0
+offset_top = 70.0
+offset_right = 171.0
+offset_bottom = 127.0
+scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_u5sy4")
-theme_override_font_sizes/font_size = 8
+theme_override_fonts/font = ExtResource("5_0tnpc")
+theme_override_font_sizes/font_size = 24
 text = "Go to the bathroom!
 ----->"
 horizontal_alignment = 1
 
 [node name="PressSpace" type="Label" parent="Labels"]
 z_index = 1
-offset_left = 49.0
-offset_top = -14.0
-offset_right = 132.0
-offset_bottom = 27.0
-scale = Vector2(0.6, 0.6)
+offset_left = 43.0
+offset_top = -9.0
+offset_right = 263.0
+offset_bottom = 108.0
+scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_u5sy4")
-theme_override_font_sizes/font_size = 8
-text = "Press space to put items in the bin"
+theme_override_fonts/font = ExtResource("5_0tnpc")
+theme_override_font_sizes/font_size = 24
+text = "Press space
+to put items
+in the bin"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="WASD" type="Label" parent="Labels"]
+[node name="Use" type="Label" parent="Labels"]
 offset_left = -112.0
-offset_top = 30.0
-offset_right = -35.0
-offset_bottom = 75.0
-scale = Vector2(0.6, 0.6)
+offset_top = 31.0
+offset_right = 144.0
+offset_bottom = 120.0
+scale = Vector2(0.09, 0.09)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_u5sy4")
-theme_override_font_sizes/font_size = 8
-text = "Use arrow keys or WASD to move"
+theme_override_fonts/font = ExtResource("5_0tnpc")
+theme_override_font_sizes/font_size = 64
+text = "Use"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="BathBin" parent="." instance=ExtResource("3_lnu2h")]
+[node name="or" type="Label" parent="Labels"]
+offset_left = -87.0
+offset_top = 31.0
+offset_right = 169.0
+offset_bottom = 120.0
+scale = Vector2(0.09, 0.09)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_0tnpc")
+theme_override_font_sizes/font_size = 64
+text = "or"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="to" type="Label" parent="Labels"]
+offset_left = -102.0
+offset_top = 43.0
+offset_right = 154.0
+offset_bottom = 132.0
+scale = Vector2(0.09, 0.09)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_0tnpc")
+theme_override_font_sizes/font_size = 64
+text = "to"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="move" type="Label" parent="Labels"]
+offset_left = -87.0
+offset_top = 43.0
+offset_right = 169.0
+offset_bottom = 190.0
+scale = Vector2(0.09, 0.09)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_0tnpc")
+theme_override_font_sizes/font_size = 64
+text = "move
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="EKey" type="Sprite2D" parent="Labels"]
+position = Vector2(-116, -10)
+scale = Vector2(0.005, 0.005)
+texture = ExtResource("6_vtaks")
+
+[node name="W" type="Sprite2D" parent="Labels"]
+position = Vector2(-102, 45)
+scale = Vector2(0.003, 0.003)
+texture = ExtResource("7_rysoc")
+
+[node name="A" type="Sprite2D" parent="Labels"]
+position = Vector2(-106, 49)
+scale = Vector2(0.003, 0.003)
+texture = ExtResource("8_ssvqc")
+
+[node name="S" type="Sprite2D" parent="Labels"]
+position = Vector2(-102, 49)
+scale = Vector2(0.003, 0.003)
+texture = ExtResource("9_264po")
+
+[node name="D" type="Sprite2D" parent="Labels"]
+position = Vector2(-98, 49)
+scale = Vector2(0.003, 0.003)
+texture = ExtResource("10_1kice")
+
+[node name="DownArrow" type="Sprite2D" parent="Labels"]
+position = Vector2(-88, 36)
+scale = Vector2(0.003, 0.003)
+texture = ExtResource("11_5newe")
+
+[node name="LeftArrow" type="Sprite2D" parent="Labels"]
+position = Vector2(-92, 36)
+scale = Vector2(0.003, 0.003)
+texture = ExtResource("12_37s47")
+
+[node name="RightArrow" type="Sprite2D" parent="Labels"]
+position = Vector2(-84, 36)
+scale = Vector2(0.003, 0.003)
+texture = ExtResource("13_bt5mj")
+
+[node name="UpArrow" type="Sprite2D" parent="Labels"]
+position = Vector2(-88, 32)
+scale = Vector2(0.003, 0.003)
+texture = ExtResource("14_e1j6l")
+
+[node name="BinsAndTrash" type="Node" parent="."]
+
+[node name="bottle" parent="BinsAndTrash" instance=ExtResource("4_lbhrr")]
+position = Vector2(-125, 19)
+item_type = 1
+
+[node name="BathBin" parent="BinsAndTrash" instance=ExtResource("3_lnu2h")]
 position = Vector2(46, -18)
 scale = Vector2(0.5, 0.5)
 bin_type = 1
 
-[node name="HallBin" parent="." instance=ExtResource("3_lnu2h")]
+[node name="HallBin" parent="BinsAndTrash" instance=ExtResource("3_lnu2h")]
 position = Vector2(22, -94)
 scale = Vector2(0.5, 0.5)
 
-[node name="bottle" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(-115, 6)
-item_type = 1
-
-[node name="pickup_item" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(93, 80)
+[node name="Bag" parent="BinsAndTrash" instance=ExtResource("4_lbhrr")]
+position = Vector2(98, 83)
 
 [node name="TrashDialogue" parent="." instance=ExtResource("7_u5sy4")]
 position = Vector2(15, 81)
 scale = Vector2(0.6, 0.6)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
