@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c1yh1pdnlyxkb"]
 
-[ext_resource type="Texture2D" uid="uid://dwhw4jkg1qdwk" path="res://Zeke Working Folder/icon.svg" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://dh3gxcuxy3ev4" path="res://Zeke Working Folder/icon.svg" id="1_uwrxv"]
 
 [node name="game" type="Node2D"]
 
