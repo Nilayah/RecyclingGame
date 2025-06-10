@@ -2,8 +2,6 @@ extends CharacterBody2D
 
 class_name Player
 
-@export var SPEED = 100
-
 @onready var pick_up = load("res://Nilayah's Working Folder/pickup_item.tscn")
 @onready var item_spr: Sprite2D = $ItemSprite
 
@@ -17,15 +15,31 @@ var current_item_type: PickupItem.ItemType = PickupItem.ItemType.TRASH
 var drop_pos := Vector2(0, 16)
 var items_in_range: Array = []
 
-func _on_ready() -> void:
+var input_direction : Vector2
+var last_direction = Vector2.DOWN
+var playback : AnimationNodeStateMachinePlayback
+
+func _ready():
 	# Pick Up / Drop Item
 	item_spr.hide() 
+	
+	# Animation
+	playback = animation_tree["parameters/playback"]
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	move_and_slide()
-
-func _input(event: InputEvent) -> void:
+	select_animation()
+	update_animation_parameters()
+	
+# Movement
+func get_input():
+	input_direction = Input.get_vector("left", "right", "up", "down")
+	if input_direction != Vector2.ZERO: # used chatgpt to figure out direction of character
+		last_direction = input_direction.normalized()
+	velocity = input_direction * SPEED
+	
+	# Drop Item
 	if Input.is_action_just_pressed("pickup") and carrying_item == true:
 		drop_item()
 
@@ -54,12 +68,8 @@ func select_animation():
 		else:
 			item_spr.show()
 			item_spr.position = Vector2(0, 4)
-# Movement
-func get_input():
-	var input_direction = Input.get_vector("left", "right", "up", "down")
-	velocity = input_direction * SPEED
 
-#Pick Up / Drop Item - used a youtube video to learn how to pick up and drop items
+# Pick Up / Drop Item - used a youtube video to learn how to pick up and drop items
 func pickup_item(item_type):
 	carrying_item = true
 	current_item_type = item_type

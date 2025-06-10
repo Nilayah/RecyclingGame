@@ -1,29 +1,60 @@
-[gd_scene load_steps=26 format=3 uid="uid://csfkdb6ytoha0"]
+[gd_scene load_steps=26 format=3 uid="uid://cbfdx8yyq8huc"]
 
-[ext_resource type="Script" uid="uid://djjd8m57ikqgp" path="res://Nilayah's Working Folder/player.gd" id="1_n6l1i"]
+[ext_resource type="Script" uid="uid://du06wp0j6mk2q" path="res://Nilayah's Working Folder/player.gd" id="1_n6l1i"]
 [ext_resource type="Texture2D" uid="uid://ctonnad7mmydx" path="res://assets/characters/girl.png" id="2_hkvil"]
 [ext_resource type="Texture2D" uid="uid://g3mqcb4xavu5" path="res://assets/bins and recycle items/recycle_items.png" id="3_hkvil"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n6l1i"]
 radius = 6.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n6l1i"]
-atlas = ExtResource("1_5huhj")
-region = Rect2(0, 0, 16, 17)
+[sub_resource type="Animation" id="Animation_8651w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4syal"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n6l1i")
-}],
-"loop": true,
-"name": &"test",
-"speed": 5.0
-}]
+[sub_resource type="Animation" id="Animation_45fmf"]
+resource_name = "idle_down"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4syal"]
-size = Vector2(17, 7.5)
+[sub_resource type="Animation" id="Animation_kudbq"]
+resource_name = "idle_left"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(3, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_1dcx3"]
 resource_name = "idle_right"
@@ -198,29 +229,31 @@ states/walk/node = SubResource("AnimationNodeBlendSpace2D_yu0qj")
 states/walk/position = Vector2(457.87, 96.9375)
 graph_offset = Vector2(-153.63, -7.43335e-06)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_n6l1i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_n6l1i")
 
-[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+[node name="PlayerSprite" type="Sprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
-sprite_frames = SubResource("SpriteFrames_4syal")
-animation = &"test"
-autoplay = "test"
+texture = ExtResource("2_hkvil")
+hframes = 4
+vframes = 3
 
 [node name="ItemSprite" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, 4)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_4syal")
+texture = ExtResource("3_hkvil")
 region_enabled = true
 region_rect = Rect2(0, 0, 19, 64)
 
-[node name="PickUpRange" type="Area2D" parent="."]
-position = Vector2(9, -2)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6lcc0")
+}
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_2ryf6")
