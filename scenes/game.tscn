@@ -19,23 +19,23 @@ scale = Vector2(0.5, 0.5)
 zoom = Vector2(5, 5)
 
 [node name="Starting Dialogue" parent="Player" instance=ExtResource("2_iywne")]
-position = Vector2(-41, -32)
+position = Vector2(-67, -32)
 
 [node name="Room3" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(0, -6)
 
 [node name="Labels" type="Node" parent="."]
 
-[node name="RecyclingBin2" type="Label" parent="Labels"]
-offset_left = -57.0
-offset_top = -94.0
-offset_right = 75.0
-offset_bottom = -64.0
+[node name="TrashBin" type="Label" parent="Labels"]
+offset_left = 4.0
+offset_top = -116.0
+offset_right = 64.0
+offset_bottom = -104.0
 scale = Vector2(0.6, 0.6)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_p57ef")
 theme_override_font_sizes/font_size = 8
-text = "More recycling bins!"
+text = "A trash bin!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -65,10 +65,10 @@ text = "Press e to pick up bottle"
 autowrap_mode = 2
 
 [node name="bathroom" type="Label" parent="Labels"]
-offset_left = -52.0
-offset_top = 72.0
-offset_right = 127.0
-offset_bottom = 91.0
+offset_left = -79.0
+offset_top = 69.0
+offset_right = 100.0
+offset_bottom = 92.0
 scale = Vector2(0.6, 0.6)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_p57ef")
@@ -104,24 +104,13 @@ text = "Use arrow keys or WASD to move"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="TrashBin" type="Label" parent="Labels"]
-offset_left = 5.0
-offset_top = -112.0
-offset_right = 57.0
-offset_bottom = -99.0
-scale = Vector2(0.6, 0.6)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_p57ef")
-theme_override_font_sizes/font_size = 8
-text = "A trash bin!"
-
 [node name="BathBin" parent="." instance=ExtResource("3_lnu2h")]
-position = Vector2(46, -13)
+position = Vector2(46, -18)
 scale = Vector2(0.5, 0.5)
 bin_type = 1
 
 [node name="HallBin" parent="." instance=ExtResource("3_lnu2h")]
-position = Vector2(22, -89)
+position = Vector2(22, -94)
 scale = Vector2(0.5, 0.5)
 
 [node name="bottle" parent="." instance=ExtResource("4_lbhrr")]
