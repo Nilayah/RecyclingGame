@@ -38,6 +38,7 @@ tile_map_data = PackedByteArray("AAD4//n/AwANABAAAAD5//n/AwANABAAAAD6//n/AwANABA
 tile_set = ExtResource("5_2762o")
 
 [node name="DecorStandard2" type="TileMapLayer" parent="Flooring/Walls"]
+position = Vector2(0, 2)
 tile_map_data = PackedByteArray("AAADAAEAAQAQAAIAAAAFAAEAAQASAAIAAAAEAAEAAQARAAIAAAAIAAQAAQAGAAkAAAAIAAUAAQAGAAoAAAD3/wUAAQACAAcAAAD4//3/AQAQAA4AAAD5//3/AQARAA4AAAD6//3/AQARAA4AAAD7//3/AQASAA4AAAA=")
 tile_set = ExtResource("6_2hutk")
 
