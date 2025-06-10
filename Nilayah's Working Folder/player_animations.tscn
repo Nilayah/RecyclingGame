@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c1sepc30v7bak"]
+[gd_scene load_steps=23 format=3 uid="uid://c5hyixagunca1"]
 
 [ext_resource type="Texture2D" uid="uid://ctonnad7mmydx" path="res://assets/characters/girl.png" id="1_6iwqi"]
 
@@ -185,7 +185,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="zeke\'s_player_animations" type="AnimatedSprite2D"]
+[node name="player_animations" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_blr4g")
 animation = &"idle_down"
 autoplay = "idle_down"

@@ -25,7 +25,7 @@ func _on_body_exited(body: Node2D) -> void:
 	if body is Player and player == body:
 		player = null
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player and Input.is_action_just_pressed("pickup"):
 		if player.carrying_item == false:
 			queue_free()
