@@ -1,12 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cubq0fwrbn86c"]
+[gd_scene load_steps=8 format=3 uid="uid://c1yh1pdnlyxkb"]
 
 [ext_resource type="PackedScene" uid="uid://bkeamqddr6o8j" path="res://olivia/scenes/room_2.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" path="res://olivia/scenes/starting_dialogue.tscn" id="2_iywne"]
+[ext_resource type="PackedScene" uid="uid://cfs088008gjbq" path="res://olivia/scenes/starting_dialogue.tscn" id="2_iywne"]
 [ext_resource type="PackedScene" uid="uid://bcgush1uxt16t" path="res://Nilayah's Working Folder/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://desjhfh6mx7ar" path="res://Nilayah's Working Folder/bin.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://kv2kj47v34g6" path="res://Nilayah's Working Folder/pickup_item.tscn" id="4_lbhrr"]
 [ext_resource type="FontFile" uid="uid://3fhf2jdfrjdw" path="res://assets/fonts/Kenney Mini.ttf" id="4_p57ef"]
-[ext_resource type="PackedScene" uid="uid://en483io6j8br" path="res://olivia/scenes/trash_dialogue.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://dm21q2g1k63vp" path="res://olivia/scenes/trash_dialogue.tscn" id="7_u5sy4"]
 
 [node name="game" type="Node2D"]
 

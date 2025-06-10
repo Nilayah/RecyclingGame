@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://en483io6j8br"]
+[gd_scene load_steps=4 format=3 uid="uid://dm21q2g1k63vp"]
 
-[ext_resource type="Script" path="res://olivia/scripts/trash_dialogue.gd" id="1_v3kgn"]
+[ext_resource type="Script" uid="uid://d14240fewaj3r" path="res://olivia/scripts/trash_dialogue.gd" id="1_v3kgn"]
 [ext_resource type="FontFile" uid="uid://3fhf2jdfrjdw" path="res://assets/fonts/Kenney Mini.ttf" id="2_mbd0n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3kgn"]
