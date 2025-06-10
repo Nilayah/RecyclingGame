@@ -2,11 +2,12 @@ extends CharacterBody2D
 
 class_name Player
 
+@export var SPEED = 100
+
 @onready var pick_up = load("res://Nilayah's Working Folder/pickup_item.tscn")
 @onready var item_spr: Sprite2D = $ItemSprite
-
-@export var SPEED = 100
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var timer: Timer = $Timer
 
 const PickupItem = preload("res://Nilayah's Working Folder/pickup_item.gd")
 
@@ -19,21 +20,33 @@ var input_direction : Vector2
 var last_direction = Vector2.DOWN
 var playback : AnimationNodeStateMachinePlayback
 
+var can_move: bool = false
+
 func _ready():
+	timer.timeout.connect(_on_timer_timeout)
+	
 	# Pick Up / Drop Item
 	item_spr.hide() 
 	
 	# Animation
 	playback = animation_tree["parameters/playback"]
 
+func _on_timer_timeout() -> void:
+	can_move = true
+
 func _physics_process(_delta):
+	# planet hearts
+	# fix bins being trash vs recycling
+	if not can_move:
+		return
+
 	get_input()
 	move_and_slide()
 	select_animation()
 	update_animation_parameters()
 	
 # Movement
-func get_input():
+func get_input():	
 	input_direction = Input.get_vector("left", "right", "up", "down")
 	if input_direction != Vector2.ZERO: # used chatgpt to figure out direction of character
 		last_direction = input_direction.normalized()
