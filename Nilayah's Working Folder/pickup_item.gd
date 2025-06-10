@@ -10,7 +10,7 @@ enum ItemType { TRASH, RECYCLABLE }
 
 var player: Player = null
 
-func _on_ready():
+func _ready():
 	match item_type:
 		ItemType.TRASH:
 			sprite.region_rect = Rect2(205, 14, 37, 50)
@@ -25,9 +25,11 @@ func _on_body_exited(body: Node2D) -> void:
 	if body is Player and player == body:
 		player = null
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if player and Input.is_action_just_pressed("pickup"):
 		if player.carrying_item == false:
 			queue_free()
 			player.pickup_item(item_type)
-	
+
+func _on_ready() -> void:
+	pass # Replace with function body.

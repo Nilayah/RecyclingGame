@@ -8,7 +8,7 @@
 script = ExtResource("1_5gtp6")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 45.0
 one_shot = true
 autostart = true
 
@@ -54,6 +54,7 @@ scale = Vector2(0.136435, 0.13728)
 texture = ExtResource("2_agp5w")
 
 [node name="Label2" type="Label" parent="CanvasLayer/Label"]
+layout_mode = 0
 offset_left = 320.0
 offset_top = 38.0
 offset_right = 456.0
