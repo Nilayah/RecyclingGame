@@ -38,10 +38,6 @@ func get_input():
 	if input_direction != Vector2.ZERO: # used chatgpt to figure out direction of character
 		last_direction = input_direction.normalized()
 	velocity = input_direction * SPEED
-	
-	# Drop Item
-	if Input.is_action_just_pressed("pickup") and carrying_item == true:
-		drop_item()
 
 # Animation
 func update_animation_parameters():
@@ -59,10 +55,10 @@ func select_animation():
 	if carrying_item == true:
 		if last_direction.y < -0.5:
 			item_spr.hide()
-		elif last_direction.x > 0.5 and last_direction.y == 0:
+		elif last_direction.x > 0.5:
 			item_spr.show()
 			item_spr.position = Vector2(5, 4)
-		elif last_direction.x < -0.5  and last_direction.y == 0:
+		elif last_direction.x < -0.5:
 			item_spr.show()
 			item_spr.position = Vector2(-5, 4)
 		else:
@@ -81,7 +77,6 @@ func pickup_item(item_type):
 	item_spr.show()
 
 func drop_item():
-	print("drop item")
 	remove_item_from_hand()
 	var item = pick_up.instantiate()
 	item.item_type = current_item_type
