@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dm21q2g1k63vp"]
 
 [ext_resource type="Script" uid="uid://d14240fewaj3r" path="res://olivia/scripts/trash_dialogue.gd" id="1_v3kgn"]
-[ext_resource type="FontFile" uid="uid://3fhf2jdfrjdw" path="res://assets/fonts/Kenney Mini.ttf" id="2_mbd0n"]
+[ext_resource type="FontFile" uid="uid://rdldim0q2d46" path="res://olivia/assets/Kenney Future Narrow.ttf" id="2_vh74k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3kgn"]
 size = Vector2(20, 48)
@@ -13,22 +13,27 @@ script = ExtResource("1_v3kgn")
 wait_time = 3.0
 
 [node name="GrTrash" type="Label" parent="."]
-offset_left = 23.0
-offset_top = -16.0
-offset_right = 78.0
-offset_bottom = -5.0
+offset_left = 30.0
+offset_top = -18.0
+offset_right = 219.0
+offset_bottom = 9.0
+scale = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0.482353, 0, 1)
-theme_override_fonts/font = ExtResource("2_mbd0n")
-theme_override_font_sizes/font_size = 8
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_vh74k")
+theme_override_font_sizes/font_size = 24
 text = "Gross, trash."
 
 [node name="ComeBack" type="Label" parent="."]
-offset_left = 20.0
-offset_top = -23.0
-offset_right = 121.0
+offset_left = 24.0
+offset_top = -19.0
+offset_right = 367.0
+offset_bottom = 38.0
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_mbd0n")
-theme_override_font_sizes/font_size = 8
+theme_override_fonts/font = ExtResource("2_vh74k")
+theme_override_font_sizes/font_size = 24
 text = "I'll come back and find
 a trash bin to put that in"
 horizontal_alignment = 1
