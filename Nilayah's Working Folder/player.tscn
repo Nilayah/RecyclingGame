@@ -1,8 +1,14 @@
 [gd_scene load_steps=26 format=3 uid="uid://bcgush1uxt16t"]
 
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://djjd8m57ikqgp" path="res://Nilayah's Working Folder/player.gd" id="1_n6l1i"]
 [ext_resource type="Texture2D" uid="uid://ctonnad7mmydx" path="res://assets/characters/girl.png" id="2_hkvil"]
 [ext_resource type="Texture2D" uid="uid://g3mqcb4xavu5" path="res://assets/bins and recycle items/recycle_items.png" id="3_hkvil"]
+=======
+[ext_resource type="Texture2D" uid="uid://ctonnad7mmydx" path="res://assets/characters/girl.png" id="1_5huhj"]
+[ext_resource type="Script" uid="uid://djjd8m57ikqgp" path="res://Nilayah's Working Folder/player.gd" id="1_n6l1i"]
+[ext_resource type="Texture2D" uid="uid://g3mqcb4xavu5" path="res://assets/bins and recycle items/recycle_items.png" id="3_4syal"]
+>>>>>>> Stashed changes
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hkvil"]
 radius = 6.0
