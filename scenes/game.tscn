@@ -1,92 +1,107 @@
 [gd_scene load_steps=7 format=3 uid="uid://c1yh1pdnlyxkb"]
 
 [ext_resource type="PackedScene" uid="uid://bkeamqddr6o8j" path="res://olivia/scenes/room_2.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://dmr5ukdaee2wk" path="res://olivia/scenes/starting_dialogue.tscn" id="2_iywne"]
+[ext_resource type="PackedScene" uid="uid://cv2j038de4o8j" path="res://olivia/scenes/starting_dialogue.tscn" id="2_iywne"]
 [ext_resource type="PackedScene" uid="uid://bcgush1uxt16t" path="res://Nilayah's Working Folder/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://desjhfh6mx7ar" path="res://Nilayah's Working Folder/bin.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://kv2kj47v34g6" path="res://Nilayah's Working Folder/pickup_item.tscn" id="4_lbhrr"]
-[ext_resource type="FontFile" uid="uid://3fhf2jdfrjdw" path="res://assets/fonts/Kenney Mini.ttf" id="4_p57ef"]
+[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_p57ef"]
 
 [node name="game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
 z_index = 5
-position = Vector2(-60, 9)
+position = Vector2(-60, 10)
 scale = Vector2(0.5, 0.5)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(5, 5)
 
 [node name="Starting Dialogue" parent="Player" instance=ExtResource("2_iywne")]
+position = Vector2(-41, -32)
 
 [node name="Room3" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(0, -6)
 
 [node name="Labels" type="Node" parent="."]
 
-[node name="PressE" type="Label" parent="Labels"]
-offset_left = -138.0
-offset_top = -13.0
-offset_right = -81.0
-offset_bottom = 10.0
+[node name="RecyclingBin2" type="Label" parent="Labels"]
+offset_left = -57.0
+offset_top = -94.0
+offset_right = 75.0
+offset_bottom = -64.0
 scale = Vector2(0.6, 0.6)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_p57ef")
 theme_override_font_sizes/font_size = 8
-text = "Press e to
-pick up bottle"
-
-[node name="ToBath" type="Label" parent="Labels"]
-offset_left = -31.0
-offset_top = 92.0
-offset_right = 74.0
-offset_bottom = 128.0
-scale = Vector2(0.6, 0.6)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_p57ef")
-theme_override_font_sizes/font_size = 8
-text = "This way to the bathroom!
---->"
+text = "More recycling bins!"
 horizontal_alignment = 1
+autowrap_mode = 2
 
-[node name="RecycleBin" type="Label" parent="Labels"]
-offset_left = 31.0
-offset_top = -44.0
-offset_right = 94.0
-offset_bottom = -21.0
+[node name="RecyclingBin" type="Label" parent="Labels"]
+offset_left = 30.0
+offset_top = -50.0
+offset_right = 82.0
+offset_bottom = -20.0
 scale = Vector2(0.6, 0.6)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_p57ef")
 theme_override_font_sizes/font_size = 8
-text = "A
-recycling bin!"
+text = "A recycling bin!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PressE" type="Label" parent="Labels"]
+offset_left = -137.0
+offset_top = -14.0
+offset_right = -85.0
+offset_bottom = 38.0
+scale = Vector2(0.6, 0.6)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_p57ef")
+theme_override_font_sizes/font_size = 8
+text = "Press e to pick up bottle"
+autowrap_mode = 2
+
+[node name="bathroom" type="Label" parent="Labels"]
+offset_left = -52.0
+offset_top = 72.0
+offset_right = 127.0
+offset_bottom = 91.0
+scale = Vector2(0.6, 0.6)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_p57ef")
+theme_override_font_sizes/font_size = 8
+text = "Go to the bathroom!
+----->"
 horizontal_alignment = 1
 
 [node name="PressSpace" type="Label" parent="Labels"]
-offset_left = 62.0
-offset_top = -11.0
-offset_right = 141.0
-offset_bottom = 12.0
+z_index = 1
+offset_left = 49.0
+offset_top = -14.0
+offset_right = 132.0
+offset_bottom = 27.0
 scale = Vector2(0.6, 0.6)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_p57ef")
 theme_override_font_sizes/font_size = 8
-text = "Press space to put
-items in the bin"
+text = "Press space to put items in the bin"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Label" type="Label" parent="Labels"]
 offset_left = -112.0
 offset_top = 30.0
 offset_right = -35.0
-offset_bottom = 53.0
+offset_bottom = 75.0
 scale = Vector2(0.6, 0.6)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_p57ef")
 theme_override_font_sizes/font_size = 8
-text = "Use arrow keys or
-WASD to move"
+text = "Use arrow keys or WASD to move"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="BathBin" parent="." instance=ExtResource("3_lnu2h")]
 position = Vector2(46, -13)
@@ -98,7 +113,7 @@ position = Vector2(22, -89)
 scale = Vector2(0.5, 0.5)
 
 [node name="bottle" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(-124, 15)
+position = Vector2(-115, 6)
 item_type = 1
 
 [node name="pickup_item" parent="." instance=ExtResource("4_lbhrr")]
