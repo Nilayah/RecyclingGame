@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://c1awhwsu2l5vn"
-path="res://.godot/imported/LIFE_LOST.ogg-7fa7da7344ca568928beb351560f2c70.oggvorbisstr"
+path="res://.godot/imported/life_lost.ogg-f2b447b77d7d4217431fbbcf4d191a8f.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/sfx/selected sfx/LIFE_LOST.ogg"
-dest_files=["res://.godot/imported/LIFE_LOST.ogg-7fa7da7344ca568928beb351560f2c70.oggvorbisstr"]
+source_file="res://assets/sfx/selected sfx/life_lost.ogg"
+dest_files=["res://.godot/imported/life_lost.ogg-f2b447b77d7d4217431fbbcf4d191a8f.oggvorbisstr"]
 
 [params]
 
