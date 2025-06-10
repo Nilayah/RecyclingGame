@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bcgush1uxt16t"]
 
 [ext_resource type="Texture2D" uid="uid://ctonnad7mmydx" path="res://assets/characters/girl.png" id="1_5huhj"]
-[ext_resource type="Script" uid="uid://du06wp0j6mk2q" path="res://Nilayah's Working Folder/player.gd" id="1_n6l1i"]
+[ext_resource type="Script" uid="uid://djjd8m57ikqgp" path="res://Nilayah's Working Folder/player.gd" id="1_n6l1i"]
 [ext_resource type="Texture2D" uid="uid://g3mqcb4xavu5" path="res://assets/bins and recycle items/recycle_items.png" id="3_4syal"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6c8t3"]
