@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var timer: Timer = $Timer
 
-@onready var trash_bin: Label = $Labels/TrashBin
 @onready var press_e: Label = $Labels/PressE
 @onready var bathroom: Label = $Labels/bathroom
 @onready var press_space: Label = $Labels/PressSpace

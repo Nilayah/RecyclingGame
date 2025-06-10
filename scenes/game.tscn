@@ -9,7 +9,7 @@
 [ext_resource type="FontFile" uid="uid://rdldim0q2d46" path="res://olivia/assets/Kenney Future Narrow.ttf" id="5_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://48x2fnmw7a1q" path="res://olivia/assets/E.png" id="6_vtaks"]
 [ext_resource type="Texture2D" uid="uid://dnjbaqtlfdxmr" path="res://olivia/assets/W.png" id="7_rysoc"]
-[ext_resource type="PackedScene" path="res://olivia/scenes/trash_dialogue.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://dm21q2g1k63vp" path="res://olivia/scenes/trash_dialogue.tscn" id="7_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://crpx3vmn3sy7c" path="res://olivia/assets/A.png" id="8_ssvqc"]
 [ext_resource type="Texture2D" uid="uid://4pjkjr8v7jrq" path="res://olivia/assets/S.png" id="9_264po"]
 [ext_resource type="Texture2D" uid="uid://c0q8occ25o8o3" path="res://olivia/assets/D.png" id="10_1kice"]
@@ -18,8 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://uch0gbn4fior" path="res://olivia/assets/RightArrow.png" id="13_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://dusedm0nogvhi" path="res://olivia/assets/UpArrow.png" id="14_e1j6l"]
 [ext_resource type="Texture2D" uid="uid://dpkiyu3f12ofe" path="res://olivia/assets/Spacebar.png" id="16_1kice"]
-[ext_resource type="PackedScene" path="res://olivia/scenes/recycle_dialogue.tscn" id="19_264po"]
-[ext_resource type="PackedScene" path="res://olivia/scenes/trash_bin_dialogue.tscn" id="20_1kice"]
+[ext_resource type="PackedScene" uid="uid://2rqmvhe10fus" path="res://olivia/scenes/recycle_dialogue.tscn" id="19_264po"]
+[ext_resource type="PackedScene" uid="uid://c82oig0ji4exy" path="res://olivia/scenes/trash_bin_dialogue.tscn" id="20_1kice"]
 
 [sub_resource type="GDScript" id="GDScript_264po"]
 script/source = "extends Label
