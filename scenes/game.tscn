@@ -1,8 +1,125 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1yh1pdnlyxkb"]
+[gd_scene load_steps=8 format=3 uid="uid://c1yh1pdnlyxkb"]
 
-[ext_resource type="Texture2D" uid="uid://dwhw4jkg1qdwk" path="res://Zeke Working Folder/icon.svg" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://bkeamqddr6o8j" path="res://olivia/scenes/room_2.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://cfs088008gjbq" path="res://olivia/scenes/starting_dialogue.tscn" id="2_iywne"]
+[ext_resource type="PackedScene" uid="uid://bcgush1uxt16t" path="res://Nilayah's Working Folder/player.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://desjhfh6mx7ar" path="res://Nilayah's Working Folder/bin.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://kv2kj47v34g6" path="res://Nilayah's Working Folder/pickup_item.tscn" id="4_lbhrr"]
+[ext_resource type="FontFile" uid="uid://3fhf2jdfrjdw" path="res://assets/fonts/Kenney Mini.ttf" id="4_p57ef"]
+[ext_resource type="PackedScene" uid="uid://dm21q2g1k63vp" path="res://olivia/scenes/trash_dialogue.tscn" id="7_u5sy4"]
 
 [node name="game" type="Node2D"]
 
-[node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("1_uwrxv")
+[node name="Player" parent="." instance=ExtResource("2_yqjtg")]
+z_index = 5
+position = Vector2(-60, 10)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(5, 5)
+
+[node name="Starting Dialogue" parent="Player" instance=ExtResource("2_iywne")]
+position = Vector2(-67, -32)
+
+[node name="Room3" parent="." instance=ExtResource("1_uwrxv")]
+position = Vector2(0, -6)
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="TrashBin" type="Label" parent="Labels"]
+offset_left = 4.0
+offset_top = -116.0
+offset_right = 64.0
+offset_bottom = -104.0
+scale = Vector2(0.6, 0.6)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_p57ef")
+theme_override_font_sizes/font_size = 8
+text = "A trash bin!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="RecyclingBin" type="Label" parent="Labels"]
+offset_left = 30.0
+offset_top = -50.0
+offset_right = 82.0
+offset_bottom = -20.0
+scale = Vector2(0.6, 0.6)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_p57ef")
+theme_override_font_sizes/font_size = 8
+text = "A recycling bin!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PressE" type="Label" parent="Labels"]
+offset_left = -137.0
+offset_top = -14.0
+offset_right = -85.0
+offset_bottom = 38.0
+scale = Vector2(0.6, 0.6)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_p57ef")
+theme_override_font_sizes/font_size = 8
+text = "Press e to pick up bottle"
+autowrap_mode = 2
+
+[node name="bathroom" type="Label" parent="Labels"]
+offset_left = -79.0
+offset_top = 69.0
+offset_right = 100.0
+offset_bottom = 92.0
+scale = Vector2(0.6, 0.6)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_p57ef")
+theme_override_font_sizes/font_size = 8
+text = "Go to the bathroom!
+----->"
+horizontal_alignment = 1
+
+[node name="PressSpace" type="Label" parent="Labels"]
+z_index = 1
+offset_left = 49.0
+offset_top = -14.0
+offset_right = 132.0
+offset_bottom = 27.0
+scale = Vector2(0.6, 0.6)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_p57ef")
+theme_override_font_sizes/font_size = 8
+text = "Press space to put items in the bin"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="WASD" type="Label" parent="Labels"]
+offset_left = -112.0
+offset_top = 30.0
+offset_right = -35.0
+offset_bottom = 75.0
+scale = Vector2(0.6, 0.6)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_p57ef")
+theme_override_font_sizes/font_size = 8
+text = "Use arrow keys or WASD to move"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="BathBin" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(46, -18)
+scale = Vector2(0.5, 0.5)
+bin_type = 1
+
+[node name="HallBin" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(22, -94)
+scale = Vector2(0.5, 0.5)
+
+[node name="bottle" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(-115, 6)
+item_type = 1
+
+[node name="pickup_item" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(93, 80)
+
+[node name="TrashDialogue" parent="." instance=ExtResource("7_u5sy4")]
+position = Vector2(15, 81)
+scale = Vector2(0.6, 0.6)
