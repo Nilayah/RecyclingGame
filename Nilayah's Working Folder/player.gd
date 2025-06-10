@@ -10,6 +10,7 @@ class_name Player
 @onready var timer: Timer = $Timer
 
 const PickupItem = preload("res://Nilayah's Working Folder/pickup_item.gd")
+const ENDING_SCENE = preload("res://scenes/ending_scene.tscn")
 
 var carrying_item: bool = false
 var current_item_type: PickupItem.ItemType = PickupItem.ItemType.TRASH
@@ -20,9 +21,19 @@ var input_direction : Vector2
 var last_direction = Vector2.DOWN
 var playback : AnimationNodeStateMachinePlayback
 
+var max_health : int = 3
+var current_health : int = max_health
+@onready var planet_container: HBoxContainer = $"../CanvasLayer/PlanetContainer"
+var list_planets : Array = []
+
 var can_move: bool = false
 
 func _ready():
+	# Planets
+	#planet_container.visible = true
+	#for i in max_health:
+		#list_planets.append(planet_container.get_child(i))
+	
 	# Pick Up / Drop Item
 	item_spr.hide() 
 	
@@ -101,3 +112,12 @@ func drop_item():
 func remove_item_from_hand():
 	item_spr.hide()
 	carrying_item = false
+
+# Planets
+func remove_planet():
+	current_health -= 1
+	var planet = list_planets[current_health].get_child(0) as Sprite2D
+	planet.visible = false
+	
+	#if current_health <= 0:
+		#get_tree().change_scene_to_packed(ENDING_SCENE)

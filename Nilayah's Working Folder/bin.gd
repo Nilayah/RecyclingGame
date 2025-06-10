@@ -33,10 +33,10 @@ func _process(delta: float) -> void:
 					if bin_type == BinType.TRASHBIN:
 						print("You threw away trash")
 					else:
-						print("WRONG BIN!")
+						player.remove_planet()
 				PickupItem.ItemType.RECYCLABLE:
 					if bin_type == BinType.RECYCLINGBIN:
 						print("You recycled a plastic bottle")
 					else:
-						print("WRONG BIN!")
+						player.remove_planet()
 			player.remove_item_from_hand()
