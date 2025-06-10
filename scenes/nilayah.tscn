@@ -34,5 +34,5 @@ item_type = 1
 position = Vector2(65, 26)
 item_type = 1
 
-[node name="Zeke\'sPlayer" parent="." instance=ExtResource("1_hhndn")]
+[node name="Player" parent="." instance=ExtResource("1_hhndn")]
 position = Vector2(5, 19)
