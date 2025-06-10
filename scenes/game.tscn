@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c1yh1pdnlyxkb"]
+[gd_scene load_steps=22 format=3 uid="uid://c1yh1pdnlyxkb"]
 
 [ext_resource type="Script" uid="uid://bhtwl1x4qxwdc" path="res://olivia/scripts/game.gd" id="1_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://bkeamqddr6o8j" path="res://olivia/scenes/room_2.tscn" id="1_uwrxv"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cbfdx8yyq8huc" path="res://Nilayah's Working Folder/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://desjhfh6mx7ar" path="res://Nilayah's Working Folder/bin.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://kv2kj47v34g6" path="res://Nilayah's Working Folder/pickup_item.tscn" id="4_lbhrr"]
-[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_u5sy4"]
 [ext_resource type="FontFile" uid="uid://rdldim0q2d46" path="res://olivia/assets/Kenney Future Narrow.ttf" id="5_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://48x2fnmw7a1q" path="res://olivia/assets/E.png" id="6_vtaks"]
 [ext_resource type="Texture2D" uid="uid://dnjbaqtlfdxmr" path="res://olivia/assets/W.png" id="7_rysoc"]
@@ -18,6 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://c4jijjjf8q8sr" path="res://olivia/assets/LeftArrow.png" id="12_37s47"]
 [ext_resource type="Texture2D" uid="uid://uch0gbn4fior" path="res://olivia/assets/RightArrow.png" id="13_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://dusedm0nogvhi" path="res://olivia/assets/UpArrow.png" id="14_e1j6l"]
+[ext_resource type="Texture2D" uid="uid://dpkiyu3f12ofe" path="res://olivia/assets/Spacebar.png" id="16_1kice"]
+[ext_resource type="PackedScene" uid="uid://2rqmvhe10fus" path="res://olivia/scenes/recycle_dialogue.tscn" id="19_264po"]
+[ext_resource type="PackedScene" uid="uid://c82oig0ji4exy" path="res://olivia/scenes/trash_bin_dialogue.tscn" id="20_1kice"]
 
 [sub_resource type="GDScript" id="GDScript_264po"]
 script/source = "extends Label
@@ -48,38 +50,13 @@ scale = Vector2(0.5, 0.5)
 zoom = Vector2(5, 5)
 
 [node name="Starting Dialogue" parent="Player" instance=ExtResource("2_iywne")]
-position = Vector2(-67, -32)
+position = Vector2(-61, -32)
 
 [node name="Room" parent="." instance=ExtResource("1_uwrxv")]
+z_index = -1
 position = Vector2(0, -6)
 
 [node name="Labels" type="Node" parent="."]
-
-[node name="TrashBin" type="Label" parent="Labels"]
-offset_left = -4.0
-offset_top = -115.0
-offset_right = 83.0
-offset_bottom = -103.0
-scale = Vector2(0.6, 0.6)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_u5sy4")
-theme_override_font_sizes/font_size = 8
-text = "A trash bin!"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="RecyclingBin" type="Label" parent="Labels"]
-offset_left = 30.0
-offset_top = -52.0
-offset_right = 82.0
-offset_bottom = -22.0
-scale = Vector2(0.6, 0.6)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_u5sy4")
-theme_override_font_sizes/font_size = 8
-text = "A recycling bin!"
-horizontal_alignment = 1
-autowrap_mode = 2
 
 [node name="PressE" type="Label" parent="Labels"]
 offset_left = -136.0
@@ -120,7 +97,7 @@ scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_0tnpc")
 theme_override_font_sizes/font_size = 24
-text = "Press space
+text = "Press              
 to put items
 in the bin"
 horizontal_alignment = 1
@@ -224,6 +201,12 @@ position = Vector2(-88, 32)
 scale = Vector2(0.003, 0.003)
 texture = ExtResource("14_e1j6l")
 
+[node name="Spacebar" type="Sprite2D" parent="Labels"]
+z_index = 1
+position = Vector2(74, -6)
+scale = Vector2(0.003, 0.003)
+texture = ExtResource("16_1kice")
+
 [node name="BinsAndTrash" type="Node" parent="."]
 
 [node name="bottle" parent="BinsAndTrash" instance=ExtResource("4_lbhrr")]
@@ -245,5 +228,11 @@ position = Vector2(98, 83)
 [node name="TrashDialogue" parent="." instance=ExtResource("7_u5sy4")]
 position = Vector2(15, 81)
 scale = Vector2(0.6, 0.6)
+
+[node name="RecycleDialogue" parent="." instance=ExtResource("19_264po")]
+position = Vector2(33, 58)
+
+[node name="TrashBinDialogue" parent="." instance=ExtResource("20_1kice")]
+position = Vector2(-15, -67)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://2rqmvhe10fus"]
+
+[ext_resource type="Script" uid="uid://bkgav2s0yjud6" path="res://olivia/scripts/recycle_dialogue.gd" id="1_qjbwd"]
+[ext_resource type="FontFile" uid="uid://rdldim0q2d46" path="res://olivia/assets/Kenney Future Narrow.ttf" id="1_s6jw4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2end"]
+size = Vector2(14, 3)
+
+[node name="RecycleDialogue" type="Area2D"]
+script = ExtResource("1_qjbwd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, -1.5)
+shape = SubResource("RectangleShape2D_g2end")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -7.0
+offset_top = -113.0
+offset_right = 216.0
+offset_bottom = -26.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.156934, 0.548694, 0.256826, 1)
+theme_override_colors/font_outline_color = Color(0.156934, 0.548694, 0.256826, 1)
+theme_override_fonts/font = ExtResource("1_s6jw4")
+theme_override_font_sizes/font_size = 24
+text = "A
+recycling
+bin!"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

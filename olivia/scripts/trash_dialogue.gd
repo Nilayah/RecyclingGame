@@ -27,7 +27,6 @@ func _on_body_entered(body: Node2D) -> void:
 	timer.start()
 
 func _on_timer_timeout() -> void:
-	print("timer stopped")
 	match step:
 		0:
 			gr_trash.visible = false

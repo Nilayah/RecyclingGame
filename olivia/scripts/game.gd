@@ -19,11 +19,10 @@ extends Node2D
 @onready var left_arrow: Sprite2D = $Labels/LeftArrow
 @onready var right_arrow: Sprite2D = $Labels/RightArrow
 @onready var up_arrow: Sprite2D = $Labels/UpArrow
-
+@onready var spacebar: Sprite2D = $Labels/Spacebar
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	trash_bin.visible = false
 	press_e.visible = false
 	bathroom.visible = false
 	press_space.visible = false
@@ -40,6 +39,7 @@ func _ready() -> void:
 	left_arrow.visible = false
 	right_arrow.visible = false
 	up_arrow.visible = false
+	spacebar.visible = false
 	
 	timer.start()
 
@@ -60,5 +60,6 @@ func _on_timer_timeout() -> void:
 	left_arrow.visible = true
 	right_arrow.visible = true
 	up_arrow.visible = true
+	spacebar.visible = true
 	
 	timer.stop()
