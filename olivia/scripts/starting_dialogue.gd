@@ -15,8 +15,7 @@ func _ready():
 	
 	timer.wait_time = 3
 	timer.start
-	
-	
+
 func _on_timer_timeout() -> void:
 	match step:
 		0:

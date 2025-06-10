@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm21q2g1k63vp"]
+
+[ext_resource type="Script" uid="uid://d14240fewaj3r" path="res://olivia/scripts/trash_dialogue.gd" id="1_v3kgn"]
+[ext_resource type="FontFile" uid="uid://3fhf2jdfrjdw" path="res://assets/fonts/Kenney Mini.ttf" id="2_mbd0n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3kgn"]
+size = Vector2(20, 48)
+
+[node name="TrashDialogue" type="Area2D"]
+script = ExtResource("1_v3kgn")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="GrTrash" type="Label" parent="."]
+offset_left = 23.0
+offset_top = -16.0
+offset_right = 78.0
+offset_bottom = -5.0
+theme_override_colors/font_color = Color(0, 0.482353, 0, 1)
+theme_override_fonts/font = ExtResource("2_mbd0n")
+theme_override_font_sizes/font_size = 8
+text = "Gross, trash."
+
+[node name="ComeBack" type="Label" parent="."]
+offset_left = 20.0
+offset_top = -23.0
+offset_right = 121.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_mbd0n")
+theme_override_font_sizes/font_size = 8
+text = "I'll come back and find
+a trash bin to put that in"
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, -10)
+shape = SubResource("RectangleShape2D_v3kgn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

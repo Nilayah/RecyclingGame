@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmr5ukdaee2wk"]
+[gd_scene load_steps=3 format=3 uid="uid://cfs088008gjbq"]
 
 [ext_resource type="FontFile" uid="uid://3fhf2jdfrjdw" path="res://assets/fonts/Kenney Mini.ttf" id="1_55pm3"]
 [ext_resource type="Script" uid="uid://dymkrh5mch2am" path="res://olivia/scripts/starting_dialogue.gd" id="1_g05iw"]
