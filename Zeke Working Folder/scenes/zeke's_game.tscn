@@ -1,12 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqgvxb8ludr72"]
+[gd_scene load_steps=3 format=3 uid="uid://dqgvxb8ludr72"]
 
 [ext_resource type="PackedScene" uid="uid://cs0jueoucrtrw" path="res://Zeke Working Folder/scenes/zeke's_player.tscn" id="1_pkevi"]
+[ext_resource type="PackedScene" uid="uid://bc5exhs5xf5ib" path="res://Zeke Working Folder/scenes/collision_object_test.tscn" id="2_tgkja"]
 
 [node name="Zeke\'sGame" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -1)
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(3.5, 3.5)
 
 [node name="Zeke\'sPlayer" parent="." instance=ExtResource("1_pkevi")]
 position = Vector2(0, -1)
+
+[node name="collision_object_test" parent="." instance=ExtResource("2_tgkja")]
+position = Vector2(-75, 5)

@@ -12,13 +12,29 @@
 zoom = Vector2(3, 3)
 
 [node name="Bin" parent="." instance=ExtResource("3_hhndn")]
-position = Vector2(67, 48)
+modulate = Color(0, 0.666667, 1, 1)
+position = Vector2(17, 81)
 scale = Vector2(0.5, 0.5)
+
+[node name="Bin2" parent="." instance=ExtResource("3_hhndn")]
+modulate = Color(0.458824, 1, 0.105882, 1)
+position = Vector2(82, 74)
+scale = Vector2(0.5, 0.5)
+bin_type = 1
 
 [node name="pickup_item" parent="." instance=ExtResource("2_fual7")]
 position = Vector2(-81, 48)
 
+[node name="pickup_item3" parent="." instance=ExtResource("2_fual7")]
+position = Vector2(-33, 23)
+
 [node name="pickup_item2" parent="." instance=ExtResource("2_fual7")]
 position = Vector2(113, 28)
+item_type = 1
+
+[node name="pickup_item4" parent="." instance=ExtResource("2_fual7")]
+position = Vector2(65, 26)
+item_type = 1
 
 [connection signal="body_entered" from="pickup_item" to="Player" method="_on_pickup_item_body_entered"]
+[connection signal="body_entered" from="pickup_item3" to="Player" method="_on_pickup_item_body_entered"]

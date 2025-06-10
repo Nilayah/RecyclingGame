@@ -7,7 +7,10 @@ class_name Player
 @onready var pick_up = load("res://Nilayah's Working Folder/pickup_item.tscn")
 @onready var item_spr: Sprite2D = $ItemSprite
 
+const PickupItem = preload("res://Nilayah's Working Folder/pickup_item.gd")
+
 var carrying_item: bool = false
+var current_item_type: PickupItem.ItemType = PickupItem.ItemType.TRASH
 var drop_pos := Vector2(0, 16)
 var items_in_range: Array = []
 
@@ -28,16 +31,22 @@ func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * SPEED
 
-#Pick Up / Drop Item
-func pickup_item():
+#Pick Up / Drop Item - used a youtube video to learn how to pick up and drop items
+func pickup_item(item_type):
 	carrying_item = true
+	current_item_type = item_type
+	match item_type:
+		PickupItem.ItemType.TRASH:
+			item_spr.region_rect = Rect2(205, 14, 37, 50)
+		PickupItem.ItemType.RECYCLABLE:
+			item_spr.region_rect = Rect2(1, 15, 17, 49)
 	item_spr.show()
 
 func drop_item():
 	remove_item_from_hand()
 	var item = pick_up.instantiate()
+	item.item_type = current_item_type
 	item.position = position + drop_pos
-	#item.position.y += 10
 	get_parent().add_child(item)
 	
 func remove_item_from_hand():
