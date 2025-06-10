@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfs088008gjbq"]
+
+[ext_resource type="FontFile" path="res://assets/fonts/Kenney Mini.ttf" id="1_55pm3"]
+[ext_resource type="Script" path="res://olivia/scripts/starting_dialogue.gd" id="1_g05iw"]
+
+[node name="Starting Dialogue" type="Node2D"]
+position = Vector2(3, -24)
+script = ExtResource("1_g05iw")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="UhOh" type="Label" parent="."]
+offset_right = 22.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_55pm3")
+theme_override_font_sizes/font_size = 8
+text = "Uh oh"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BottleFloor" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_55pm3")
+theme_override_font_sizes/font_size = 8
+text = "Looks like I left a 
+bottle on the floor"
+
+[node name="Recycling" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_55pm3")
+theme_override_font_sizes/font_size = 8
+text = "Better take it
+to recycling..."
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
