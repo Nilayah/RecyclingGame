@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdwiidbn02pjw"]
+[gd_scene load_steps=5 format=3 uid="uid://cpn6eekdswy6f"]
 
 [ext_resource type="PackedScene" uid="uid://bx5upgfqtijso" path="res://olivia/scenes/room_3.tscn" id="1_014kd"]
 [ext_resource type="PackedScene" uid="uid://d32gknb778j61" path="res://canvas/planet_container.tscn" id="1_rus8k"]
 [ext_resource type="PackedScene" uid="uid://bobxl2lq0kr0t" path="res://player/player.tscn" id="2_bswci"]
-[ext_resource type="PackedScene" uid="uid://b6xd21vx8j3dm" path="res://rileys folder/timer.tscn" id="4_5xbjy"]
+[ext_resource type="PackedScene" path="res://rileys folder/timer.tscn" id="4_5xbjy"]
 
 [node name="Level1" type="Node2D"]
 
