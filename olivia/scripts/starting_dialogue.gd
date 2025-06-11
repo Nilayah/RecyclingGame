@@ -34,6 +34,7 @@ func _on_timer_timeout() -> void:
 		2:
 			bottle_floor.visible = false
 			recycling.visible = true
+			white_background.visible = true
 			timer.wait_time = 4
 			timer.start()
 		3:
