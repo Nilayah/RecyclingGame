@@ -1,8 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://cbfdx8yyq8huc"]
+[gd_scene load_steps=26 format=3 uid="uid://bobxl2lq0kr0t"]
 
-[ext_resource type="Script" uid="uid://du06wp0j6mk2q" path="res://Nilayah's Working Folder/player.gd" id="1_n6l1i"]
-[ext_resource type="Texture2D" uid="uid://ctonnad7mmydx" path="res://assets/characters/girl.png" id="2_hkvil"]
-[ext_resource type="Texture2D" uid="uid://g3mqcb4xavu5" path="res://assets/bins and recycle items/recycle_items.png" id="3_hkvil"]
+[ext_resource type="Script" uid="uid://d0giykn6yo5fe" path="res://player/player.gd" id="1_g1dw6"]
+[ext_resource type="Texture2D" uid="uid://ctonnad7mmydx" path="res://assets/characters/girl.png" id="2_yw30f"]
+[ext_resource type="Texture2D" uid="uid://g3mqcb4xavu5" path="res://assets/bins and recycle items/recycle_items.png" id="3_qjkh3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n6l1i"]
 radius = 6.0
@@ -229,8 +229,8 @@ states/walk/node = SubResource("AnimationNodeBlendSpace2D_yu0qj")
 states/walk/position = Vector2(457.87, 96.9375)
 graph_offset = Vector2(-153.63, -7.43335e-06)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_n6l1i")
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_g1dw6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -238,7 +238,7 @@ shape = SubResource("CircleShape2D_n6l1i")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_hkvil")
+texture = ExtResource("2_yw30f")
 hframes = 4
 vframes = 3
 
@@ -246,7 +246,7 @@ vframes = 3
 visible = false
 position = Vector2(0, 4)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_hkvil")
+texture = ExtResource("3_qjkh3")
 region_enabled = true
 region_rect = Rect2(0, 0, 19, 64)
 

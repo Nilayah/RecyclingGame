@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://desjhfh6mx7ar"]
+
+[ext_resource type="Script" uid="uid://c5vrpqq8e54k8" path="res://bin/bin.gd" id="1_46t4j"]
+[ext_resource type="Texture2D" uid="uid://6b52svsax03h" path="res://assets/bins and recycle items/recycling bin.png" id="1_k7d78"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46t4j"]
+size = Vector2(20, 25)
+
+[node name="Bin" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_46t4j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -28)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_k7d78")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -13.5)
+shape = SubResource("RectangleShape2D_46t4j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="ready" from="." to="." method="_on_ready"]

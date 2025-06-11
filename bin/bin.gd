@@ -4,13 +4,14 @@ extends Area2D
 
 @onready var sprite: Sprite2D = $Sprite2D
 # SFX
+@onready var life_lost = $life_lost
 @onready var toss_recyclable = $toss_recyclable
 @onready var toss_trash = $toss_trash
-@onready var life_lost = $life_lost
 
-const PickupItem = preload("res://Nilayah's Working Folder/pickup_item.gd")
+const PickupItem = preload("res://items/pickup_item.gd")
 @onready var game: Node2D = $"../.."
 
+const Player = preload("res://player/player.gd")
 var player: Player = null
 
 enum BinType { TRASHBIN, RECYCLINGBIN }
@@ -21,11 +22,9 @@ func _on_ready() -> void:
 			sprite.texture = load("res://assets/bins/trash_bin.png")
 		BinType.RECYCLINGBIN:
 			sprite.texture = load("res://assets/bins/recycling_bin.png")
-
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		player = body as Player
-
 func _on_body_exited(body: Node2D) -> void:
 	if body is Player and player == body:
 		player = null
@@ -39,12 +38,14 @@ func _process(delta: float) -> void:
 						print("You threw away trash")
 						toss_trash.play()
 					else:
+						life_lost.play()
 						player.remove_planet()
 				PickupItem.ItemType.RECYCLABLE:
 					if bin_type == BinType.RECYCLINGBIN:
 						print("You recycled a plastic bottle")
 						toss_recyclable.play()
 					else:
-						player.remove_planet()
 						life_lost.play()
+						player.remove_planet()
 			player.remove_item_from_hand()
+			game.items_gone()

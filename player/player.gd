@@ -4,12 +4,12 @@ class_name Player
 
 @export var SPEED = 100
 
-@onready var pick_up = load("res://Nilayah's Working Folder/pickup_item.tscn")
+@onready var pick_up = load("res://items/pickup_item.tscn")
 @onready var item_spr: Sprite2D = $ItemSprite
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var timer: Timer = $Timer
 
-const PickupItem = preload("res://Nilayah's Working Folder/pickup_item.gd")
+const PickupItem = preload("res://items/pickup_item.gd")
 const ENDING_SCENE = preload("res://scenes/ending_scene.tscn")
 
 var carrying_item: bool = false
@@ -30,7 +30,7 @@ var can_move: bool = false
 
 func _ready():
 	# Planets
-	planet_container.visible = false
+	planet_container.visible = true
 	for i in max_health:
 		list_planets.append(planet_container.get_child(i))
 	
