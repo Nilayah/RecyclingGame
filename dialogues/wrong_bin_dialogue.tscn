@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsa3uqrfl58iv"]
+
+[ext_resource type="Script" uid="uid://behsmi0eknr65" path="res://dialogues/wrong_bin_dialogue.gd" id="1_4te3m"]
+[ext_resource type="FontFile" uid="uid://rdldim0q2d46" path="res://olivia/assets/Kenney Future Narrow.ttf" id="1_cb4j1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4te3m"]
+size = Vector2(34, 22)
+
+[node name="wrong_bin_dialogue" type="Area2D"]
+script = ExtResource("1_4te3m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(13, 8)
+shape = SubResource("RectangleShape2D_4te3m")
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+offset_left = -25.0
+offset_top = -55.0
+offset_right = 165.0
+offset_bottom = 122.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_cb4j1")
+theme_override_font_sizes/font_size = 24
+text = "Looks like you lost a heart when you put an item in the wrong bin"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

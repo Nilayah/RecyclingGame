@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://g3mqcb4xavu5" path="res://assets/bins and recycle items/recycle_items.png" id="2_bklxq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ltp3i"]
-radius = 23.3333
-height = 46.6667
+radius = 30.0
+height = 60.0
 
 [node name="pickup_item" type="Area2D"]
 scale = Vector2(0.3, 0.3)
@@ -13,13 +13,13 @@ script = ExtResource("1_edkex")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -30)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_bklxq")
 region_enabled = true
 region_rect = Rect2(206, -1, 36, 65)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -26.6667)
+position = Vector2(0, -23.3333)
 shape = SubResource("CapsuleShape2D_ltp3i")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

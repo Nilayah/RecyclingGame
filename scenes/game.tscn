@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c1yh1pdnlyxkb"]
+[gd_scene load_steps=25 format=3 uid="uid://c1yh1pdnlyxkb"]
 
 [ext_resource type="Script" uid="uid://xln5oa53yasg" path="res://scenes/game.gd" id="1_5newe"]
 [ext_resource type="PackedScene" uid="uid://d32gknb778j61" path="res://canvas/planet_container.tscn" id="2_2j8yo"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://2rqmvhe10fus" path="res://dialogues/recycle_dialogue.tscn" id="20_8qcs6"]
 [ext_resource type="PackedScene" uid="uid://c82oig0ji4exy" path="res://dialogues/trash_bin_dialogue.tscn" id="21_qe5gq"]
 [ext_resource type="TileSet" uid="uid://l5afp6repfev" path="res://assets/grass.tres" id="22_37s47"]
+[ext_resource type="PackedScene" uid="uid://dsa3uqrfl58iv" path="res://dialogues/wrong_bin_dialogue.tscn" id="23_bt5mj"]
 
 [sub_resource type="GDScript" id="GDScript_264po"]
 script/source = "extends Label
@@ -60,7 +61,7 @@ scale = Vector2(2, 2)
 zoom = Vector2(5, 5)
 
 [node name="Room" parent="." instance=ExtResource("5_k7wi2")]
-z_index = -1
+z_index = -5
 position = Vector2(0, -6)
 
 [node name="TileMap" type="TileMap" parent="Room"]
@@ -114,6 +115,20 @@ theme_override_font_sizes/font_size = 24
 text = "Press              
 to put items
 in the bin"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="AttemptWrongBin" type="Label" parent="Labels"]
+z_index = 1
+offset_left = 52.0
+offset_top = -94.0
+offset_right = 452.0
+offset_bottom = 23.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_r5xo6")
+theme_override_font_sizes/font_size = 24
+text = "I wonder what happens when you put a recyclable in the trash bin"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -239,6 +254,10 @@ item_type = 1
 [node name="bag" parent="BinsAndTrash" instance=ExtResource("18_35g1i")]
 position = Vector2(98, 83)
 
+[node name="bottle2" parent="BinsAndTrash" instance=ExtResource("18_35g1i")]
+position = Vector2(45, -75)
+item_type = 1
+
 [node name="TrashDialogue" parent="." instance=ExtResource("19_dypgg")]
 position = Vector2(15, 81)
 scale = Vector2(0.6, 0.6)
@@ -249,4 +268,11 @@ position = Vector2(33, 58)
 [node name="TrashBinDialogue" parent="." instance=ExtResource("21_qe5gq")]
 position = Vector2(-15, -67)
 
+[node name="wrong_bin_dialogue" parent="." instance=ExtResource("23_bt5mj")]
+position = Vector2(7, -100)
+
+[node name="EndTimer" type="Timer" parent="."]
+wait_time = 5.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="EndTimer" to="." method="_on_end_timer_timeout"]

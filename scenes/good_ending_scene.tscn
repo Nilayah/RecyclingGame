@@ -1,11 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://ww5x24speksg"]
+[gd_scene load_steps=4 format=3 uid="uid://2k7epwysqpm7"]
 
-[ext_resource type="Script" uid="uid://wrlul6su5i4o" path="res://scenes/ending_scene_script.gd" id="1_5gtp6"]
-[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_u14vp"]
-[ext_resource type="Texture2D" uid="uid://bcldenqqi3c6l" path="res://assets/planets/Earth-Heart.png" id="3_u14vp"]
+[ext_resource type="Script" uid="uid://wrlul6su5i4o" path="res://scenes/ending_scene_script.gd" id="1_tdgb7"]
+[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_ou7ti"]
+[ext_resource type="Texture2D" uid="uid://bcldenqqi3c6l" path="res://assets/planets/Earth-Heart.png" id="3_jajjd"]
 
 [node name="main" type="Node2D"]
-script = ExtResource("1_5gtp6")
+script = ExtResource("1_tdgb7")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 45.0
@@ -37,7 +37,7 @@ offset_top = -157.96
 offset_right = 259.0
 offset_bottom = 266.04
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_u14vp")
+theme_override_fonts/font = ExtResource("2_ou7ti")
 theme_override_font_sizes/font_size = 34
 text = "Great job recycling         !
 Recycling keeps the earth clean. 80% of the plastic bottles end up in landfills. We need more recycling heros, like YOU!"
@@ -51,7 +51,7 @@ offset_top = 38.0
 offset_right = 456.0
 offset_bottom = 74.0
 theme_override_colors/font_color = Color(0, 0.617677, 0, 0.968627)
-theme_override_fonts/font = ExtResource("2_u14vp")
+theme_override_fonts/font = ExtResource("2_ou7ti")
 theme_override_font_sizes/font_size = 34
 text = "HERO"
 horizontal_alignment = 1
@@ -60,6 +60,6 @@ horizontal_alignment = 1
 position = Vector2(257, 241)
 rotation = -0.275407
 scale = Vector2(0.977273, 1.04375)
-texture = ExtResource("3_u14vp")
+texture = ExtResource("3_jajjd")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

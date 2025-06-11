@@ -19,8 +19,9 @@ extends Node2D
 @onready var right_arrow: Sprite2D = $Labels/RightArrow
 @onready var up_arrow: Sprite2D = $Labels/UpArrow
 @onready var spacebar: Sprite2D = $Labels/Spacebar
-@export var total_items := 2
-var items_remaining := 2
+@onready var end_timer: Timer = $EndTimer
+@export var total_items := 3
+var items_remaining := 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -72,4 +73,7 @@ func items_gone():
 		go_to_next_level()
 
 func go_to_next_level():
+	end_timer.start()
+
+func _on_end_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://screens/loading_screen.tscn")

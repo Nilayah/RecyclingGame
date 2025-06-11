@@ -5,7 +5,7 @@ extends Node2D
 
 
 func _ready():
-	canvas_layer.visible = false
+	canvas_layer.visible = true
 
 func _on_timer_timeout() -> void:
 	canvas_layer.visible = true
