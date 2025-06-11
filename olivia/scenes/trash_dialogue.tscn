@@ -1,10 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dm21q2g1k63vp"]
+[gd_scene load_steps=5 format=3 uid="uid://dm21q2g1k63vp"]
 
 [ext_resource type="Script" uid="uid://d14240fewaj3r" path="res://olivia/scripts/trash_dialogue.gd" id="1_v3kgn"]
 [ext_resource type="FontFile" uid="uid://rdldim0q2d46" path="res://olivia/assets/Kenney Future Narrow.ttf" id="2_vh74k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3kgn"]
 size = Vector2(20, 48)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3kgn"]
+bg_color = Color(0.881937, 0.881937, 0.881937, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="TrashDialogue" type="Area2D"]
 script = ExtResource("1_v3kgn")
@@ -41,6 +48,14 @@ horizontal_alignment = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(10, -10)
 shape = SubResource("RectangleShape2D_v3kgn")
+
+[node name="white_background" type="Panel" parent="."]
+z_index = -1
+offset_left = 17.0
+offset_top = -23.0
+offset_right = 132.0
+offset_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v3kgn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
