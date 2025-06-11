@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhehd3pm5f7uu"]
+[gd_scene load_steps=10 format=3 uid="uid://onoq5wcbhwnh"]
 
-[ext_resource type="Script" uid="uid://bctbcycevqndc" path="res://Nilayah's Working Folder/pickup_item.gd" id="1_rs3ol"]
-[ext_resource type="Texture2D" uid="uid://g3mqcb4xavu5" path="res://assets/bins and recycle items/recycle_items.png" id="2_aigd6"]
-[ext_resource type="AudioStream" uid="uid://kfl0uw5y774j" path="res://assets/sfx/pickup_trash.ogg" id="3_ubykd"]
-[ext_resource type="AudioStream" uid="uid://bla1x8anly2r2" path="res://assets/sfx/pickup_recycling.ogg" id="4_xe6d4"]
+[ext_resource type="Script" uid="uid://bfh05ysjmtouo" path="res://scripts/pickup_item.gd" id="1_aorx0"]
+[ext_resource type="Texture2D" uid="uid://g3mqcb4xavu5" path="res://assets/bins and recycle items/recycle_items.png" id="2_v0ach"]
+[ext_resource type="AudioStream" uid="uid://kfl0uw5y774j" path="res://assets/sfx/pickup_trash.ogg" id="3_p4nwc"]
+[ext_resource type="AudioStream" uid="uid://bla1x8anly2r2" path="res://assets/sfx/pickup_recycling.ogg" id="4_lypid"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ltp3i"]
 radius = 6.66667
@@ -60,59 +60,6 @@ tracks/3/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_xe6d4"]
-resource_name = "pickup_trash"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Sprite2D:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("..")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"queue_free"
-}]
-}
-
 [sub_resource type="Animation" id="Animation_abjis"]
 resource_name = "pickup_recyclable"
 tracks/0/type = "value"
@@ -166,6 +113,59 @@ tracks/3/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_xe6d4"]
+resource_name = "pickup_trash"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_abjis"]
 _data = {
 &"RESET": SubResource("Animation_ubykd"),
@@ -173,13 +173,13 @@ _data = {
 &"pickup_trash": SubResource("Animation_xe6d4")
 }
 
-[node name="pickup_item" type="Area2D"]
+[node name="zeke_pickup_item" type="Area2D"]
 scale = Vector2(0.3, 0.3)
-script = ExtResource("1_rs3ol")
+script = ExtResource("1_aorx0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -30)
-texture = ExtResource("2_aigd6")
+texture = ExtResource("2_v0ach")
 region_enabled = true
 region_rect = Rect2(1, -1, 19, 65)
 
@@ -188,11 +188,11 @@ position = Vector2(0, -20)
 shape = SubResource("CapsuleShape2D_ltp3i")
 
 [node name="pickup_trash_sfx" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_ubykd")
+stream = ExtResource("3_p4nwc")
 bus = &"SFX"
 
 [node name="pickup_recyclable_sfx" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_xe6d4")
+stream = ExtResource("4_lypid")
 bus = &"SFX"
 
 [node name="pickup_sfx_animation" type="AnimationPlayer" parent="."]
