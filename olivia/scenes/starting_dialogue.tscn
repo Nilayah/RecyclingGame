@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfs088008gjbq"]
+[gd_scene load_steps=4 format=3 uid="uid://cfs088008gjbq"]
 
 [ext_resource type="Script" uid="uid://dymkrh5mch2am" path="res://olivia/scripts/starting_dialogue.gd" id="1_g05iw"]
 [ext_resource type="FontFile" uid="uid://rdldim0q2d46" path="res://olivia/assets/Kenney Future Narrow.ttf" id="2_8u4s1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g05iw"]
+bg_color = Color(0.881937, 0.881937, 0.881937, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="Starting Dialogue" type="Node2D"]
 position = Vector2(3, -24)
@@ -62,5 +69,13 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_8u4s1")
 theme_override_font_sizes/font_size = 24
 text = "Welcome to my bedroom!"
+
+[node name="white_background" type="Panel" parent="."]
+z_index = -1
+offset_left = 6.0
+offset_top = -1.0
+offset_right = 114.0
+offset_bottom = 21.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g05iw")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
