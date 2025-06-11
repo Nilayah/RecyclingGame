@@ -545,6 +545,7 @@ separation = Vector2i(1, 1)
 25:9/0 = 0
 26:9/0 = 0
 27:9/0 = 0
+27:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.71245, -4.9659, 2.03582, -4.86698, 1.73906, 1.16728, 2.13474, 8, -2.81137, 8)
 28:9/0 = 0
 29:9/0 = 0
 30:9/0 = 0
@@ -601,6 +602,7 @@ separation = Vector2i(1, 1)
 25:10/0 = 0
 26:10/0 = 0
 27:10/0 = 0
+27:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.81137, -8, 1.9369, -8, 1.73906, 1.16728, 2.13474, 8, -2.81137, 8)
 28:10/0 = 0
 29:10/0 = 0
 30:10/0 = 0
@@ -1768,4 +1770,5 @@ separation = Vector2i(1, 1)
 56:30/0 = 0
 
 [resource]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_2762o")
