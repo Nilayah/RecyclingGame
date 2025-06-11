@@ -3,11 +3,12 @@ extends Node2D
 @onready var gametimer: Timer = $gametimer
 var time_left = 60
 @onready var timerlabel: Label = $CanvasLayer/timerlabel
+@onready var firsttimer: Timer = $firsttimer
 
 
 # Citation (Used AI): ChatGPT
 func _ready():
-	gametimer.start()
+	firsttimer.start()
 	_update_timer_label()
 
 func _on_gametimer_timeout() -> void:
@@ -22,3 +23,7 @@ func _update_timer_label():
 	var seconds = int(time_left % 60)
 	var formatted_time = "Time left: %d:%02d" % [minutes, seconds]
 	timerlabel.text = formatted_time
+
+
+func _on_firsttimer_timeout() -> void:
+	gametimer.start()

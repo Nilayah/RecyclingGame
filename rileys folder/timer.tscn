@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_8ug00"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ug00"]
-bg_color = Color(1, 1, 1, 0.501961)
+bg_color = Color(1, 1, 1, 0.611765)
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_7nfs4")
@@ -29,6 +29,11 @@ offset_bottom = 48.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_8ug00")
 
 [node name="gametimer" type="Timer" parent="."]
+
+[node name="firsttimer" type="Timer" parent="."]
+wait_time = 16.0
+one_shot = true
 autostart = true
 
 [connection signal="timeout" from="gametimer" to="." method="_on_gametimer_timeout"]
+[connection signal="timeout" from="firsttimer" to="." method="_on_firsttimer_timeout"]
