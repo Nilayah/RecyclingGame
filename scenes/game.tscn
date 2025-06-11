@@ -19,8 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://desjhfh6mx7ar" path="res://bin/bin.tscn" id="17_c1417"]
 [ext_resource type="PackedScene" uid="uid://y6i3jg0p8epd" path="res://items/pickup_item.tscn" id="18_35g1i"]
 [ext_resource type="PackedScene" uid="uid://dm21q2g1k63vp" path="res://dialogues/trash_dialogue.tscn" id="19_dypgg"]
-[ext_resource type="PackedScene" uid="uid://2rqmvhe10fus" path="res://dialogues/recycle_dialogue.tscn" id="20_8qcs6"]
-[ext_resource type="PackedScene" uid="uid://c82oig0ji4exy" path="res://dialogues/trash_bin_dialogue.tscn" id="21_qe5gq"]
+[ext_resource type="PackedScene" uid="uid://2rqmvhe10fus" path="res://olivia/scenes/recycle_dialogue.tscn" id="20_8qcs6"]
+[ext_resource type="PackedScene" uid="uid://c82oig0ji4exy" path="res://olivia/scenes/trash_bin_dialogue.tscn" id="21_qe5gq"]
 [ext_resource type="TileSet" uid="uid://l5afp6repfev" path="res://assets/grass.tres" id="22_37s47"]
 [ext_resource type="PackedScene" uid="uid://dsa3uqrfl58iv" path="res://dialogues/wrong_bin_dialogue.tscn" id="23_bt5mj"]
 

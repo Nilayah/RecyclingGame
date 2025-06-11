@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://begixxumia62t"]
+[gd_scene load_steps=8 format=3 uid="uid://begixxumia62t"]
 
 [ext_resource type="Script" uid="uid://b62db3kwluqjv" path="res://scenes/level_1.gd" id="1_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://bx5upgfqtijso" path="res://olivia/scenes/room_3.tscn" id="1_014kd"]
 [ext_resource type="PackedScene" uid="uid://d32gknb778j61" path="res://canvas/planet_container.tscn" id="1_rus8k"]
 [ext_resource type="PackedScene" uid="uid://bobxl2lq0kr0t" path="res://player/player.tscn" id="2_bswci"]
 [ext_resource type="PackedScene" uid="uid://desjhfh6mx7ar" path="res://bin/bin.tscn" id="5_4nkto"]
+[ext_resource type="PackedScene" uid="uid://dghpyx52nanxv" path="res://olivia/scenes/level_2_dialogue.tscn" id="5_pa8r4"]
 [ext_resource type="PackedScene" uid="uid://y6i3jg0p8epd" path="res://items/pickup_item.tscn" id="6_fcfvj"]
 
 [node name="Level1" type="Node2D"]
@@ -25,6 +26,10 @@ scale = Vector2(0.6, 0.6)
 scale = Vector2(2.66667, 2.66667)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
+
+[node name="Level1Dialogue" parent="Player" instance=ExtResource("5_pa8r4")]
+position = Vector2(-48.3333, -20)
+scale = Vector2(0.333333, 0.333333)
 
 [node name="Room3" parent="." instance=ExtResource("1_014kd")]
 z_index = -5

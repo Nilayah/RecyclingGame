@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dghpyx52nanxv"]
+[gd_scene load_steps=4 format=3 uid="uid://dghpyx52nanxv"]
 
 [ext_resource type="FontFile" uid="uid://rdldim0q2d46" path="res://olivia/assets/Kenney Future Narrow.ttf" id="1_3dpqx"]
 [ext_resource type="Script" uid="uid://b6sl8nn8xyycp" path="res://olivia/scripts/level_2_dialogue.gd" id="1_r3stb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3stb"]
+bg_color = Color(0.881937, 0.881937, 0.881937, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="Level1Dialogue" type="Node2D"]
 position = Vector2(27, -3)
@@ -27,12 +34,27 @@ offset_left = 1.0
 offset_top = -43.0
 offset_right = 277.0
 offset_bottom = 44.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0.156934, 0.548694, 0.256826, 1)
-theme_override_colors/font_outline_color = Color(0.156934, 0.548694, 0.256826, 1)
+theme_override_colors/font_color = Color(0.156934, 0.548694, 0.256826, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_3dpqx")
 theme_override_font_sizes/font_size = 24
 text = "We should clean up"
+horizontal_alignment = 1
+
+[node name="Find" type="Label" parent="."]
+offset_left = -25.0
+offset_top = -73.0
+offset_right = 313.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(0, 0.458824, 0.721569, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_3dpqx")
+theme_override_font_sizes/font_size = 24
+text = "We will have to find
+all of the bins to put
+away the trash"
 horizontal_alignment = 1
 
 [node name="Hero" type="Label" parent="."]
@@ -49,5 +71,17 @@ theme_override_font_sizes/font_size = 24
 text = "Let's be heros and
 pick up the trash!"
 horizontal_alignment = 1
+
+[node name="white_background" type="Panel" parent="."]
+z_index = -1
+offset_left = -46.0
+offset_top = -78.0
+offset_right = 325.0
+offset_bottom = 19.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r3stb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(138, -10)
+zoom = Vector2(3, 3)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
