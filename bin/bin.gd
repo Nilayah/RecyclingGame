@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 				PickupItem.ItemType.TRASH:
 					if bin_type == BinType.TRASHBIN:
 						toss_trash.play()
-						sparkle_effect.play("trash_sparkle")
+						sparkle_effect.play("success_sparkle")
 					else:
 						life_lost.play()
 						sparkle_effect.play("wrong_bin")
@@ -46,7 +46,7 @@ func _process(delta: float) -> void:
 				PickupItem.ItemType.RECYCLABLE:
 					if bin_type == BinType.RECYCLINGBIN:
 						toss_recyclable.play()
-						sparkle_effect.play("recycle_sparkle")
+						sparkle_effect.play("success_sparkle")
 					else:
 						life_lost.play()
 						sparkle_effect.play("wrong_bin")
