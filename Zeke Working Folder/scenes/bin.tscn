@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://1ho2o67qvm65"]
 
-[ext_resource type="Script" uid="uid://c5vrpqq8e54k8" path="res://Nilayah's Working Folder/bin.gd" id="1_d3g6x"]
+[ext_resource type="Script" uid="uid://c5vrpqq8e54k8" path="res://bin/bin.gd" id="1_d3g6x"]
 [ext_resource type="Texture2D" uid="uid://6b52svsax03h" path="res://assets/bins and recycle items/recycling bin.png" id="2_oyhdw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_46t4j"]

@@ -1,0 +1,392 @@
+[gd_scene load_steps=26 format=3 uid="uid://bobxl2lq0kr0t"]
+
+[ext_resource type="Texture2D" uid="uid://ctonnad7mmydx" path="res://assets/characters/girl.png" id="2_yw30f"]
+[ext_resource type="Texture2D" uid="uid://g3mqcb4xavu5" path="res://assets/bins and recycle items/recycle_items.png" id="3_qjkh3"]
+
+[sub_resource type="GDScript" id="GDScript_rkbax"]
+script/source = "extends CharacterBody2D
+
+class_name Player_what
+
+@export var SPEED = 100
+
+@onready var pick_up = load(\"res://items/pickup_item.tscn\")
+@onready var item_spr: Sprite2D = $ItemSprite
+@onready var animation_tree: AnimationTree = $AnimationTree
+@onready var timer: Timer = $Timer
+
+const PickupItem = preload(\"res://items/pickup_item.gd\")
+const ENDING_SCENE = preload(\"res://scenes/ending_scene.tscn\")
+
+var carrying_item: bool = false
+var current_item_type: PickupItem.ItemType = PickupItem.ItemType.TRASH
+var drop_pos := Vector2(0, 16)
+var items_in_range: Array = []
+
+var input_direction : Vector2
+var last_direction = Vector2.DOWN
+var playback : AnimationNodeStateMachinePlayback
+
+var max_health : int = 3
+var current_health : int = max_health
+@onready var planet_container: HBoxContainer = $\"../CanvasLayer/PlanetContainer\"
+var list_planets : Array = []
+
+var can_move: bool = false
+
+func _ready():
+	# Planets
+	planet_container.visible = true
+	for i in max_health:
+		list_planets.append(planet_container.get_child(i))
+	
+	# Pick Up / Drop Item
+	item_spr.hide() 
+	
+	# Animation
+	playback = animation_tree[\"parameters/playback\"]
+
+func _on_timer_timeout() -> void:
+	can_move = true
+
+func _physics_process(_delta):
+	if not can_move:
+		return
+
+	get_input()
+	move_and_slide()
+	select_animation()
+	update_animation_parameters()
+	
+# Movement
+func get_input():	
+	input_direction = Input.get_vector(\"left\", \"right\", \"up\", \"down\")
+	if input_direction != Vector2.ZERO: # used chatgpt to figure out direction of character
+		last_direction = input_direction.normalized()
+	velocity = input_direction * SPEED
+	
+	# Drop Item
+	if Input.is_action_just_pressed(\"pickup\") and carrying_item == true:
+		drop_item()
+
+# Animation
+func update_animation_parameters():
+	if input_direction == Vector2.ZERO:
+		return
+	
+	animation_tree[\"parameters/idle/blend_position\"] = input_direction
+	animation_tree[\"parameters/walk/blend_position\"] = input_direction
+	
+func select_animation():
+	if velocity == Vector2.ZERO:
+		playback.travel(\"idle\")
+	else:
+		playback.travel(\"walk\")
+	if carrying_item == true:
+		if last_direction.y < -0.5:
+			item_spr.hide()
+		elif last_direction.x > 0.5 and last_direction.y == 0:
+			item_spr.show()
+			item_spr.position = Vector2(5, 4)
+		elif last_direction.x < -0.5 and last_direction.y == 0:
+			item_spr.show()
+			item_spr.position = Vector2(-5, 4)
+		else:
+			item_spr.show()
+			item_spr.position = Vector2(0, 4)
+
+# Pick Up / Drop Item - used a youtube video to learn how to pick up and drop items
+func pickup_item(item_type):
+	carrying_item = true
+	current_item_type = item_type
+	match item_type:
+		PickupItem.ItemType.TRASH:
+			item_spr.region_rect = Rect2(205, 14, 37, 50)
+		PickupItem.ItemType.RECYCLABLE:
+			item_spr.region_rect = Rect2(1, 15, 17, 49)
+	item_spr.show()
+
+func drop_item():
+	remove_item_from_hand()
+	var item = pick_up.instantiate()
+	item.item_type = current_item_type
+	item.position = position + drop_pos
+	get_parent().add_child(item)
+	
+func remove_item_from_hand():
+	item_spr.hide()
+	carrying_item = false
+
+# Planets
+func remove_planet():
+	current_health -= 1
+	var planet = list_planets[current_health].get_child(0) as Sprite2D
+	planet.visible = false
+	
+	#if current_health <= 0:
+		#get_tree().change_scene_to_packed(ENDING_SCENE)
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n6l1i"]
+radius = 6.0
+
+[sub_resource type="Animation" id="Animation_8651w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_45fmf"]
+resource_name = "idle_down"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kudbq"]
+resource_name = "idle_left"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(3, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1dcx3"]
+resource_name = "idle_right"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_moybk"]
+resource_name = "idle_up"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g6n7d"]
+resource_name = "walk_down"
+length = 0.3
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(0, 0), Vector2i(0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bh4x6"]
+resource_name = "walk_left"
+length = 0.3
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(3, 2), Vector2i(3, 0), Vector2i(3, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fg2tl"]
+resource_name = "walk_right"
+length = 0.3
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 2), Vector2i(1, 0), Vector2i(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_one0g"]
+resource_name = "walk_up"
+length = 0.3
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(2, 2), Vector2i(2, 0), Vector2i(2, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6lcc0"]
+_data = {
+&"RESET": SubResource("Animation_8651w"),
+&"idle_down": SubResource("Animation_45fmf"),
+&"idle_left": SubResource("Animation_kudbq"),
+&"idle_right": SubResource("Animation_1dcx3"),
+&"idle_up": SubResource("Animation_moybk"),
+&"walk_down": SubResource("Animation_g6n7d"),
+&"walk_left": SubResource("Animation_bh4x6"),
+&"walk_right": SubResource("Animation_fg2tl"),
+&"walk_up": SubResource("Animation_one0g")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4syal"]
+animation = &"idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6c8t3"]
+animation = &"idle_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kxjgr"]
+animation = &"idle_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_55iyl"]
+animation = &"idle_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_e02kc"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_4syal")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_6c8t3")
+blend_point_1/pos = Vector2(-1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_kxjgr")
+blend_point_2/pos = Vector2(0, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_55iyl")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ckiex"]
+animation = &"walk_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bkgw7"]
+animation = &"walk_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sw3as"]
+animation = &"walk_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wmg7l"]
+animation = &"walk_left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_yu0qj"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_ckiex")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_bkgw7")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_sw3as")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_wmg7l")
+blend_point_3/pos = Vector2(-1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_2ryf6"]
+states/Start/position = Vector2(204, 99.625)
+states/idle/node = SubResource("AnimationNodeBlendSpace2D_e02kc")
+states/idle/position = Vector2(324.37, 99.25)
+states/walk/node = SubResource("AnimationNodeBlendSpace2D_yu0qj")
+states/walk/position = Vector2(457.87, 96.9375)
+graph_offset = Vector2(-153.63, -7.43335e-06)
+
+[node name="Player" type="CharacterBody2D"]
+script = SubResource("GDScript_rkbax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_n6l1i")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_yw30f")
+hframes = 4
+vframes = 3
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 4)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_qjkh3")
+region_enabled = true
+region_rect = Rect2(0, 0, 19, 64)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6lcc0")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_2ryf6")
+anim_player = NodePath("../AnimationPlayer")
+parameters/idle/blend_position = Vector2(0, 1)
+parameters/walk/blend_position = Vector2(0, 0)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 16.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

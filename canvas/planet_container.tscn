@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b23ytx1gi1uja"]
+[gd_scene load_steps=4 format=3 uid="uid://d32gknb778j61"]
 
-[ext_resource type="Texture2D" uid="uid://0171bdnlcck0" path="res://assets/planets/planet05.png" id="1_xoa70"]
-[ext_resource type="Texture2D" uid="uid://t6x1nuwocjah" path="res://assets/planets/planet06.png" id="2_3oish"]
-[ext_resource type="Texture2D" uid="uid://c5ydfjxisebeq" path="res://assets/planets/planet08.png" id="3_ejhvq"]
+[ext_resource type="Texture2D" uid="uid://decw5h3txti8j" path="res://assets/planets/planet05.png" id="1_a765k"]
+[ext_resource type="Texture2D" uid="uid://b7aolbpiwmfbf" path="res://assets/planets/planet06.png" id="2_ostys"]
+[ext_resource type="Texture2D" uid="uid://br1fn7tuq22nb" path="res://assets/planets/planet08.png" id="3_j12qn"]
 
 [node name="PlanetContainer" type="HBoxContainer"]
 offset_right = 995.0
@@ -14,7 +14,7 @@ layout_mode = 2
 
 [node name="Sprite" type="Sprite2D" parent="Planet1"]
 scale = Vector2(0.08, 0.08)
-texture = ExtResource("1_xoa70")
+texture = ExtResource("1_a765k")
 centered = false
 
 [node name="Planet2" type="Panel" parent="."]
@@ -22,7 +22,7 @@ layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Planet2"]
 scale = Vector2(0.08, 0.08)
-texture = ExtResource("2_3oish")
+texture = ExtResource("2_ostys")
 centered = false
 
 [node name="Planet3" type="Panel" parent="."]
@@ -30,5 +30,5 @@ layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Planet3"]
 scale = Vector2(0.08, 0.08)
-texture = ExtResource("3_ejhvq")
+texture = ExtResource("3_j12qn")
 centered = false

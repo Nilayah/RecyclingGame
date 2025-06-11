@@ -8,6 +8,7 @@ extends Area2D
 # used chatgpt to learn how to use enums
 enum ItemType { TRASH, RECYCLABLE }
 
+const Player = preload("res://player/player.gd")
 var player: Player = null
 
 func _ready():

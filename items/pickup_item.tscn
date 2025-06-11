@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://kv2kj47v34g6"]
+[gd_scene load_steps=4 format=3 uid="uid://y6i3jg0p8epd"]
 
-[ext_resource type="Script" uid="uid://bctbcycevqndc" path="res://Nilayah's Working Folder/pickup_item.gd" id="1_ltp3i"]
-[ext_resource type="Texture2D" uid="uid://g3mqcb4xavu5" path="res://assets/bins and recycle items/recycle_items.png" id="1_q444d"]
+[ext_resource type="Script" uid="uid://dtvhiqxw23nqd" path="res://items/pickup_item.gd" id="1_edkex"]
+[ext_resource type="Texture2D" uid="uid://g3mqcb4xavu5" path="res://assets/bins and recycle items/recycle_items.png" id="2_bklxq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ltp3i"]
 radius = 23.3333
@@ -9,16 +9,17 @@ height = 46.6667
 
 [node name="pickup_item" type="Area2D"]
 scale = Vector2(0.3, 0.3)
-script = ExtResource("1_ltp3i")
+script = ExtResource("1_edkex")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -30)
-texture = ExtResource("1_q444d")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_bklxq")
 region_enabled = true
 region_rect = Rect2(206, -1, 36, 65)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -20)
+position = Vector2(0, -26.6667)
 shape = SubResource("CapsuleShape2D_ltp3i")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

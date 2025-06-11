@@ -3,14 +3,10 @@ extends Area2D
 @export var bin_type: BinType = BinType.TRASHBIN
 
 @onready var sprite: Sprite2D = $Sprite2D
-# SFX
-@onready var toss_recyclable = $toss_recyclable
-@onready var toss_trash = $toss_trash
-@onready var life_lost = $life_lost
 
-const PickupItem = preload("res://Nilayah's Working Folder/pickup_item.gd")
-@onready var game: Node2D = $"../.."
+const PickupItem = preload("res://items/pickup_item.gd")
 
+const Player = preload("res://player/player.gd")
 var player: Player = null
 
 enum BinType { TRASHBIN, RECYCLINGBIN }
@@ -37,14 +33,11 @@ func _process(delta: float) -> void:
 				PickupItem.ItemType.TRASH:
 					if bin_type == BinType.TRASHBIN:
 						print("You threw away trash")
-						toss_trash.play()
 					else:
 						player.remove_planet()
 				PickupItem.ItemType.RECYCLABLE:
 					if bin_type == BinType.RECYCLINGBIN:
 						print("You recycled a plastic bottle")
-						toss_recyclable.play()
 					else:
 						player.remove_planet()
-						life_lost.play()
 			player.remove_item_from_hand()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4qc4bst6r44j"]
+[gd_scene load_steps=3 format=3 uid="uid://cfs088008gjbq"]
 
 [ext_resource type="Script" uid="uid://dymkrh5mch2am" path="res://olivia/scripts/starting_dialogue.gd" id="1_g05iw"]
 [ext_resource type="FontFile" uid="uid://rdldim0q2d46" path="res://olivia/assets/Kenney Future Narrow.ttf" id="2_8u4s1"]

@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bemlfwkeep1tv"]
+[gd_scene load_steps=4 format=3 uid="uid://2rqmvhe10fus"]
 
-[ext_resource type="Script" uid="uid://bkgav2s0yjud6" path="res://olivia/scripts/recycle_dialogue.gd" id="1_qjbwd"]
+[ext_resource type="Script" uid="uid://bg0vmluqjlqhx" path="res://dialogues/recycle_dialogue.gd" id="1_jgptg"]
 [ext_resource type="FontFile" uid="uid://rdldim0q2d46" path="res://olivia/assets/Kenney Future Narrow.ttf" id="1_s6jw4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2end"]
 size = Vector2(14, 3)
 
 [node name="RecycleDialogue" type="Area2D"]
-script = ExtResource("1_qjbwd")
+script = ExtResource("1_jgptg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(7, -1.5)
