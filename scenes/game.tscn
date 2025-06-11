@@ -49,7 +49,7 @@ wait_time = 16.0
 visible = false
 
 [node name="Player" parent="." instance=ExtResource("3_vj1bj")]
-position = Vector2(-60, 10)
+position = Vector2(-125, 8)
 scale = Vector2(0.5, 0.5)
 
 [node name="Starting Dialogue" parent="Player" instance=ExtResource("4_u80mf")]
@@ -73,10 +73,10 @@ layer_0/tile_data = PackedInt32Array(-1114130, 196608, 16, -1048594, 196608, 16,
 [node name="Labels" type="Node" parent="."]
 
 [node name="PressE" type="Label" parent="Labels"]
-offset_left = -136.0
-offset_top = -12.0
-offset_right = 24.0
-offset_bottom = 85.0
+offset_left = -70.0
+offset_top = -11.0
+offset_right = 90.0
+offset_bottom = 86.0
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = -3
@@ -171,7 +171,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="EKey" type="Sprite2D" parent="Labels"]
-position = Vector2(-116, -10)
+position = Vector2(-50, -9)
 scale = Vector2(0.005, 0.005)
 texture = ExtResource("7_5aobx")
 
@@ -224,14 +224,16 @@ texture = ExtResource("16_7lfb0")
 [node name="BinsAndTrash" type="Node" parent="."]
 
 [node name="TrashBin" parent="BinsAndTrash" instance=ExtResource("17_c1417")]
+z_index = -1
 position = Vector2(22, -94)
 
 [node name="RecyclingBin" parent="BinsAndTrash" instance=ExtResource("17_c1417")]
+z_index = -1
 position = Vector2(46, -18)
 bin_type = 1
 
 [node name="bottle" parent="BinsAndTrash" instance=ExtResource("18_35g1i")]
-position = Vector2(-125, 19)
+position = Vector2(-58, 19)
 item_type = 1
 
 [node name="bag" parent="BinsAndTrash" instance=ExtResource("18_35g1i")]
