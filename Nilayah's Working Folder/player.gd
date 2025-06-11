@@ -30,9 +30,9 @@ var can_move: bool = false
 
 func _ready():
 	# Planets
-	#planet_container.visible = true
-	#for i in max_health:
-		#list_planets.append(planet_container.get_child(i))
+	planet_container.visible = true
+	for i in max_health:
+		list_planets.append(planet_container.get_child(i))
 	
 	# Pick Up / Drop Item
 	item_spr.hide() 
@@ -44,8 +44,6 @@ func _on_timer_timeout() -> void:
 	can_move = true
 
 func _physics_process(_delta):
-	# planet hearts
-	# fix bins being trash vs recycling
 	if not can_move:
 		return
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://c1yh1pdnlyxkb"]
+[gd_scene load_steps=23 format=3 uid="uid://c1yh1pdnlyxkb"]
 
 [ext_resource type="Script" uid="uid://bhtwl1x4qxwdc" path="res://olivia/scripts/game.gd" id="1_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://bkeamqddr6o8j" path="res://olivia/scenes/room_2.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cfs088008gjbq" path="res://olivia/scenes/starting_dialogue.tscn" id="2_iywne"]
 [ext_resource type="PackedScene" uid="uid://cbfdx8yyq8huc" path="res://Nilayah's Working Folder/player.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" path="res://Nilayah's Working Folder/planet_container.tscn" id="3_5newe"]
 [ext_resource type="PackedScene" uid="uid://desjhfh6mx7ar" path="res://Nilayah's Working Folder/bin.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://kv2kj47v34g6" path="res://Nilayah's Working Folder/pickup_item.tscn" id="4_lbhrr"]
 [ext_resource type="FontFile" uid="uid://rdldim0q2d46" path="res://olivia/assets/Kenney Future Narrow.ttf" id="5_0tnpc"]
@@ -40,6 +41,11 @@ script = ExtResource("1_ssvqc")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 16.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlanetContainer" parent="CanvasLayer" instance=ExtResource("3_5newe")]
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
 z_index = 5
