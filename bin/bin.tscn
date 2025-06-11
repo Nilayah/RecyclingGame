@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dmqg2pyobwwwe" path="res://assets/vfx/Effect and Bullet 16x16/Fire Effect and Bullet 16x16.png" id="8_8qem1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_46t4j"]
-size = Vector2(27, 32)
+size = Vector2(36, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uib34"]
 atlas = ExtResource("6_7s2bm")
@@ -142,7 +142,7 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_k7d78")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_46t4j")
 
 [node name="life_lost" type="AudioStreamPlayer2D" parent="."]

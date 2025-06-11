@@ -44,6 +44,13 @@ position = Vector2(-554, 22)
 position = Vector2(-167, 212)
 bin_type = 1
 
+[node name="RecyclingBin2" parent="Bins" instance=ExtResource("5_4nkto")]
+position = Vector2(-39, -208)
+bin_type = 1
+
+[node name="TrashBin2" parent="Bins" instance=ExtResource("5_4nkto")]
+position = Vector2(-487, 382)
+
 [node name="Items" type="Node2D" parent="."]
 
 [node name="bottle1" parent="Items" instance=ExtResource("6_fcfvj")]
@@ -83,6 +90,7 @@ position = Vector2(-539, 39)
 
 [node name="bottle6" parent="Items" instance=ExtResource("6_fcfvj")]
 position = Vector2(-288, 4)
+item_type = 1
 
 [node name="bottle7" parent="Items" instance=ExtResource("6_fcfvj")]
 position = Vector2(-164, -129)
