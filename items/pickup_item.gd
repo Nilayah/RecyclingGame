@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var pickup_item: Area2D = $"."
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var pickup_sfx_animation = $pickup_sfx_animation
 
 @export var item_type: ItemType = ItemType.TRASH
 
@@ -29,5 +30,10 @@ func _on_body_exited(body: Node2D) -> void:
 func _process(delta: float) -> void:
 	if player and Input.is_action_just_pressed("pickup"):
 		if player.carrying_item == false:
-			queue_free()
 			player.pickup_item(item_type)
+			# queue_free() exists in the sfx animations
+			match item_type:
+				ItemType.TRASH:
+					pickup_sfx_animation.play("pickup_trash")
+				ItemType.RECYCLABLE:
+					pickup_sfx_animation.play("pickup_recyclable")
