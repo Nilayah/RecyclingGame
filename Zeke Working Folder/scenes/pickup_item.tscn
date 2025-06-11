@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dhehd3pm5f7uu"]
 
-[ext_resource type="Script" uid="uid://bctbcycevqndc" path="res://Nilayah's Working Folder/pickup_item.gd" id="1_rs3ol"]
+[ext_resource type="Script" uid="uid://bfh05ysjmtouo" path="res://Zeke Working Folder/scripts/pickup_item.gd" id="1_rs3ol"]
 [ext_resource type="Texture2D" uid="uid://g3mqcb4xavu5" path="res://assets/bins and recycle items/recycle_items.png" id="2_aigd6"]
 [ext_resource type="AudioStream" uid="uid://kfl0uw5y774j" path="res://assets/sfx/pickup_trash.ogg" id="3_ubykd"]
 [ext_resource type="AudioStream" uid="uid://bla1x8anly2r2" path="res://assets/sfx/pickup_recycling.ogg" id="4_xe6d4"]
