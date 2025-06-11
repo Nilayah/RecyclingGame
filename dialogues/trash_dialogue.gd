@@ -24,7 +24,10 @@ func _on_body_entered(body: Node2D) -> void:
 	triggered = true
 	gr_trash.visible = true
 	
-	timer.wait_time = 3
+	timer.wait_time = 2
+	player.can_move = false
+	player.playback.travel("idle")
+
 	timer.start()
 
 func _on_timer_timeout() -> void:
@@ -32,9 +35,10 @@ func _on_timer_timeout() -> void:
 		0:
 			gr_trash.visible = false
 			come_back.visible = true
-			timer.wait_time = 7
+			timer.wait_time = 5
 			timer.start()
 		1:
 			come_back.visible = false
 			timer.stop()  # All done
+			player.can_move = true
 	step += 1

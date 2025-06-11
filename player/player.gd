@@ -72,22 +72,23 @@ func update_animation_parameters():
 	animation_tree["parameters/walk/blend_position"] = input_direction
 	
 func select_animation():
-	if velocity == Vector2.ZERO:
-		playback.travel("idle")
-	else:
-		playback.travel("walk")
-	if carrying_item == true:
-		if last_direction.y < -0.5:
-			item_spr.hide()
-		elif last_direction.x > 0.5 and last_direction.y == 0:
-			item_spr.show()
-			item_spr.position = Vector2(5, 4)
-		elif last_direction.x < -0.5 and last_direction.y == 0:
-			item_spr.show()
-			item_spr.position = Vector2(-5, 4)
+	if can_move:
+		if velocity == Vector2.ZERO:
+			playback.travel("idle")
 		else:
-			item_spr.show()
-			item_spr.position = Vector2(0, 4)
+			playback.travel("walk")
+		if carrying_item == true:
+			if last_direction.y < -0.5:
+				item_spr.hide()
+			elif last_direction.x > 0.5 and last_direction.y == 0:
+				item_spr.show()
+				item_spr.position = Vector2(5, 4)
+			elif last_direction.x < -0.5 and last_direction.y == 0:
+				item_spr.show()
+				item_spr.position = Vector2(-5, 4)
+			else:
+				item_spr.show()
+				item_spr.position = Vector2(0, 4)
 
 # Pick Up / Drop Item - used a youtube video to learn how to pick up and drop items
 func pickup_item(item_type):

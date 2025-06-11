@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtnk1hp4mhvad"
-path="res://.godot/imported/pixel_heart.png-ac0b50e7ea4e8c0e4c14e027a5e45a20.ctex"
+uid="uid://bcldenqqi3c6l"
+path="res://.godot/imported/Earth-Heart.png-6e567ced36e94294c09def1fddc9496c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/planets/pixel_heart.png"
-dest_files=["res://.godot/imported/pixel_heart.png-ac0b50e7ea4e8c0e4c14e027a5e45a20.ctex"]
+source_file="res://assets/planets/Earth-Heart.png"
+dest_files=["res://.godot/imported/Earth-Heart.png-6e567ced36e94294c09def1fddc9496c.ctex"]
 
 [params]
 
