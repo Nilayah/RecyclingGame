@@ -5,6 +5,7 @@ extends Area2D
 @onready var sprite: Sprite2D = $Sprite2D
 
 const PickupItem = preload("res://Nilayah's Working Folder/pickup_item.gd")
+@onready var game: Node2D = $"../.."
 
 var player: Player = null
 
@@ -40,3 +41,4 @@ func _process(delta: float) -> void:
 					else:
 						player.remove_planet()
 			player.remove_item_from_hand()
+			game.items_gone()
