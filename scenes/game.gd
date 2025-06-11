@@ -22,6 +22,8 @@ extends Node2D
 @onready var end_timer: Timer = $EndTimer
 @export var total_items := 3
 var items_remaining := 3
+@onready var trash_bin: Area2D = $BinsAndTrash/TrashBin
+@onready var recycling_bin: Area2D = $BinsAndTrash/RecyclingBin
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -67,13 +69,10 @@ func _on_timer_timeout() -> void:
 	
 	timer.stop()
 	
-func items_gone():
-	items_remaining -= 1
-	if items_remaining <= 0:
-		go_to_next_level()
-
-func go_to_next_level():
-	end_timer.start()
+func _process(_delta: float) -> void:
+	if (trash_bin.items_in_bin_count + recycling_bin.items_in_bin_count) == total_items:
+		trash_bin.items_in_bin_count += 1
+		end_timer.start()
 
 func _on_end_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://screens/loading_screen.tscn")

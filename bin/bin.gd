@@ -7,12 +7,13 @@ extends Area2D
 @onready var life_lost = $life_lost
 @onready var toss_recyclable = $toss_recyclable
 @onready var toss_trash = $toss_trash
+@onready var sparkle_effect = $sparkle_effect
 
 const PickupItem = preload("res://items/pickup_item.gd")
-@onready var game: Node2D = $"../.."
 
 const Player = preload("res://player/player.gd")
 var player: Player = null
+var items_in_bin_count : int = 0
 
 enum BinType { TRASHBIN, RECYCLINGBIN }
 
@@ -35,17 +36,21 @@ func _process(delta: float) -> void:
 			match player.current_item_type:
 				PickupItem.ItemType.TRASH:
 					if bin_type == BinType.TRASHBIN:
-						print("You threw away trash")
 						toss_trash.play()
+						sparkle_effect.play("trash_sparkle")
 					else:
 						life_lost.play()
+						sparkle_effect.play("wrong_bin")
 						player.remove_planet()
+						player.incorrect_bins += 1
 				PickupItem.ItemType.RECYCLABLE:
 					if bin_type == BinType.RECYCLINGBIN:
-						print("You recycled a plastic bottle")
 						toss_recyclable.play()
+						sparkle_effect.play("recycle_sparkle")
 					else:
 						life_lost.play()
+						sparkle_effect.play("wrong_bin")
 						player.remove_planet()
+						player.incorrect_bins += 1
 			player.remove_item_from_hand()
-			game.items_gone()
+			items_in_bin_count += 1
