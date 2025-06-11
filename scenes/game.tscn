@@ -1,9 +1,9 @@
 [gd_scene load_steps=23 format=3 uid="uid://c1yh1pdnlyxkb"]
 
-[ext_resource type="Script" uid="uid://bhtwl1x4qxwdc" path="res://olivia/scripts/game.gd" id="1_w5d6o"]
+[ext_resource type="Script" uid="uid://xln5oa53yasg" path="res://scenes/game.gd" id="1_5newe"]
 [ext_resource type="PackedScene" uid="uid://d32gknb778j61" path="res://canvas/planet_container.tscn" id="2_2j8yo"]
 [ext_resource type="PackedScene" uid="uid://bobxl2lq0kr0t" path="res://player/player.tscn" id="3_vj1bj"]
-[ext_resource type="PackedScene" uid="uid://cfs088008gjbq" path="res://olivia/scenes/starting_dialogue.tscn" id="4_u80mf"]
+[ext_resource type="PackedScene" uid="uid://cfs088008gjbq" path="res://dialogues/starting_dialogue.tscn" id="4_u80mf"]
 [ext_resource type="PackedScene" uid="uid://bbea836sxabn6" path="res://rooms/room_2.tscn" id="5_k7wi2"]
 [ext_resource type="FontFile" uid="uid://rdldim0q2d46" path="res://olivia/assets/Kenney Future Narrow.ttf" id="6_r5xo6"]
 [ext_resource type="Texture2D" uid="uid://48x2fnmw7a1q" path="res://olivia/assets/E.png" id="7_5aobx"]
@@ -18,9 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://dpkiyu3f12ofe" path="res://olivia/assets/Spacebar.png" id="16_7lfb0"]
 [ext_resource type="PackedScene" uid="uid://desjhfh6mx7ar" path="res://bin/bin.tscn" id="17_c1417"]
 [ext_resource type="PackedScene" uid="uid://y6i3jg0p8epd" path="res://items/pickup_item.tscn" id="18_35g1i"]
-[ext_resource type="PackedScene" uid="uid://dm21q2g1k63vp" path="res://olivia/scenes/trash_dialogue.tscn" id="19_dypgg"]
-[ext_resource type="PackedScene" uid="uid://2rqmvhe10fus" path="res://olivia/scenes/recycle_dialogue.tscn" id="20_8qcs6"]
-[ext_resource type="PackedScene" uid="uid://c82oig0ji4exy" path="res://olivia/scenes/trash_bin_dialogue.tscn" id="21_qe5gq"]
+[ext_resource type="PackedScene" uid="uid://dm21q2g1k63vp" path="res://dialogues/trash_dialogue.tscn" id="19_dypgg"]
+[ext_resource type="PackedScene" uid="uid://2rqmvhe10fus" path="res://dialogues/recycle_dialogue.tscn" id="20_8qcs6"]
+[ext_resource type="PackedScene" uid="uid://c82oig0ji4exy" path="res://dialogues/trash_bin_dialogue.tscn" id="21_qe5gq"]
 
 [sub_resource type="GDScript" id="GDScript_264po"]
 script/source = "extends Label
@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 "
 
 [node name="game" type="Node2D"]
-script = ExtResource("1_w5d6o")
+script = ExtResource("1_5newe")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 16.0
@@ -217,6 +217,7 @@ texture = ExtResource("16_7lfb0")
 
 [node name="TrashBin" parent="BinsAndTrash" instance=ExtResource("17_c1417")]
 position = Vector2(22, -94)
+bin_type = 0
 
 [node name="RecyclingBin" parent="BinsAndTrash" instance=ExtResource("17_c1417")]
 position = Vector2(46, -18)

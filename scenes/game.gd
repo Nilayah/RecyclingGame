@@ -72,4 +72,4 @@ func items_gone():
 		go_to_next_level()
 
 func go_to_next_level():
-	get_tree().change_scene_to_file("res://screens/loading_screen.gd")
+	get_tree().change_scene_to_file("res://screens/loading_screen.tscn")

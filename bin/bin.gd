@@ -9,6 +9,7 @@ extends Area2D
 @onready var toss_trash = $toss_trash
 
 const PickupItem = preload("res://items/pickup_item.gd")
+@onready var game: Node2D = $"../.."
 
 const Player = preload("res://player/player.gd")
 var player: Player = null
@@ -21,11 +22,9 @@ func _on_ready() -> void:
 			sprite.texture = load("res://assets/bins/trash_bin.png")
 		BinType.RECYCLINGBIN:
 			sprite.texture = load("res://assets/bins/recycling_bin.png")
-
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		player = body as Player
-
 func _on_body_exited(body: Node2D) -> void:
 	if body is Player and player == body:
 		player = null
@@ -49,3 +48,4 @@ func _process(delta: float) -> void:
 						life_lost.play()
 						player.remove_planet()
 			player.remove_item_from_hand()
+			game.items_gone()
