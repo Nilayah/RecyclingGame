@@ -26,6 +26,8 @@ var current_health : int = max_health
 @onready var planet_container: HBoxContainer = $"../CanvasLayer/PlanetContainer"
 var list_planets : Array = []
 
+var incorrect_bins : int = 0
+
 var can_move: bool = false
 
 func _ready():

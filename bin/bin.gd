@@ -9,10 +9,10 @@ extends Area2D
 @onready var toss_trash = $toss_trash
 
 const PickupItem = preload("res://items/pickup_item.gd")
-@onready var game: Node2D = $"../.."
 
 const Player = preload("res://player/player.gd")
 var player: Player = null
+var items_in_bin_count : int = 0
 
 enum BinType { TRASHBIN, RECYCLINGBIN }
 
@@ -35,17 +35,17 @@ func _process(delta: float) -> void:
 			match player.current_item_type:
 				PickupItem.ItemType.TRASH:
 					if bin_type == BinType.TRASHBIN:
-						print("You threw away trash")
 						toss_trash.play()
 					else:
 						life_lost.play()
 						player.remove_planet()
+						player.incorrect_bins += 1
 				PickupItem.ItemType.RECYCLABLE:
 					if bin_type == BinType.RECYCLINGBIN:
-						print("You recycled a plastic bottle")
 						toss_recyclable.play()
 					else:
 						life_lost.play()
 						player.remove_planet()
+						player.incorrect_bins += 1
 			player.remove_item_from_hand()
-			game.items_gone()
+			items_in_bin_count += 1
