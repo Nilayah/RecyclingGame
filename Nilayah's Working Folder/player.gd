@@ -4,7 +4,7 @@ class_name Player
 
 @export var SPEED = 100
 
-@onready var pick_up = load("res://Nilayah's Working Folder/pickup_item.tscn")
+@onready var pick_up = load("res://scenes/pickup_item.tscn")
 @onready var item_spr: Sprite2D = $ItemSprite
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var timer: Timer = $Timer
