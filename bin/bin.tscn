@@ -213,10 +213,12 @@ stream = ExtResource("4_h10ha")
 stream = ExtResource("5_4lxkc")
 
 [node name="sparkle_effect" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -18)
+position = Vector2(0, -20)
 sprite_frames = SubResource("SpriteFrames_huokw")
-animation = &"trash_sparkle"
+animation = &"wrong_bin"
 autoplay = "default"
+frame = 7
+frame_progress = 1.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
