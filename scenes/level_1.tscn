@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://begixxumia62t"]
+[gd_scene load_steps=7 format=3 uid="uid://begixxumia62t"]
 
 [ext_resource type="Script" uid="uid://b62db3kwluqjv" path="res://scenes/level_1.gd" id="1_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://bx5upgfqtijso" path="res://olivia/scenes/room_3.tscn" id="1_014kd"]
 [ext_resource type="PackedScene" uid="uid://d32gknb778j61" path="res://canvas/planet_container.tscn" id="1_rus8k"]
 [ext_resource type="PackedScene" uid="uid://bobxl2lq0kr0t" path="res://player/player.tscn" id="2_bswci"]
+[ext_resource type="PackedScene" uid="uid://desjhfh6mx7ar" path="res://bin/bin.tscn" id="5_4nkto"]
+[ext_resource type="PackedScene" uid="uid://y6i3jg0p8epd" path="res://items/pickup_item.tscn" id="6_fcfvj"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_5xbjy")
@@ -23,3 +25,26 @@ visible = false
 
 [node name="Room3" parent="." instance=ExtResource("1_014kd")]
 z_index = -5
+
+[node name="Bin" parent="." instance=ExtResource("5_4nkto")]
+position = Vector2(-130, 216)
+
+[node name="Bin2" parent="." instance=ExtResource("5_4nkto")]
+position = Vector2(-129, 190)
+bin_type = 1
+
+[node name="pickup_item" parent="." instance=ExtResource("6_fcfvj")]
+position = Vector2(-78, 184)
+
+[node name="pickup_item2" parent="." instance=ExtResource("6_fcfvj")]
+position = Vector2(-82, 219)
+item_type = 1
+
+[node name="pickup_item3" parent="." instance=ExtResource("6_fcfvj")]
+position = Vector2(-63, 200)
+
+[node name="EndTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="EndTimer" to="." method="_on_end_timer_timeout"]
