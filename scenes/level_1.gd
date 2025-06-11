@@ -2,8 +2,8 @@ extends Node2D
 
 @onready var player: Player = $Player
 @onready var end_timer: Timer = $EndTimer
-@onready var bin: Area2D = $Bin
-@onready var bin_2: Area2D = $Bin2
+@onready var trash_bin: Area2D = $Bins/TrashBin
+@onready var recycling_bin: Area2D = $Bins/RecyclingBin
 
 func _ready() -> void:
 	pass # Replace with function body.
@@ -13,8 +13,8 @@ func _process(delta: float) -> void:
 	if player.current_health == 0:
 		player.current_health -= 1
 		end_timer.start()
-	if bin.items_in_bin_count + bin_2.items_in_bin_count == 3:
-		bin.items_in_bin_count += 1
+	if trash_bin.items_in_bin_count + recycling_bin.items_in_bin_count == 13:
+		trash_bin.items_in_bin_count += 1
 		end_timer.start()
 
 func _on_end_timer_timeout() -> void:

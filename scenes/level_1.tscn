@@ -11,7 +11,7 @@
 script = ExtResource("1_5xbjy")
 
 [node name="Player" parent="." instance=ExtResource("2_bswci")]
-position = Vector2(0, 127)
+position = Vector2(14, 130)
 scale = Vector2(0.8, 0.8)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -26,22 +26,61 @@ visible = false
 [node name="Room3" parent="." instance=ExtResource("1_014kd")]
 z_index = -5
 
-[node name="Bin" parent="." instance=ExtResource("5_4nkto")]
-position = Vector2(-130, 216)
+[node name="Bins" type="Node2D" parent="."]
 
-[node name="Bin2" parent="." instance=ExtResource("5_4nkto")]
-position = Vector2(-129, 190)
+[node name="TrashBin" parent="Bins" instance=ExtResource("5_4nkto")]
+z_index = 1
+position = Vector2(-554, 22)
+
+[node name="RecyclingBin" parent="Bins" instance=ExtResource("5_4nkto")]
+position = Vector2(-167, 212)
 bin_type = 1
 
-[node name="pickup_item" parent="." instance=ExtResource("6_fcfvj")]
-position = Vector2(-78, 184)
+[node name="Items" type="Node2D" parent="."]
 
-[node name="pickup_item2" parent="." instance=ExtResource("6_fcfvj")]
-position = Vector2(-82, 219)
+[node name="bottle1" parent="Items" instance=ExtResource("6_fcfvj")]
+position = Vector2(-449, -22)
 item_type = 1
 
-[node name="pickup_item3" parent="." instance=ExtResource("6_fcfvj")]
-position = Vector2(-63, 200)
+[node name="bottle2" parent="Items" instance=ExtResource("6_fcfvj")]
+position = Vector2(-139, 217)
+item_type = 1
+
+[node name="bag1" parent="Items" instance=ExtResource("6_fcfvj")]
+position = Vector2(9, 209)
+
+[node name="bag2" parent="Items" instance=ExtResource("6_fcfvj")]
+position = Vector2(132, 187)
+
+[node name="bottle3" parent="Items" instance=ExtResource("6_fcfvj")]
+position = Vector2(-81, 344)
+item_type = 1
+
+[node name="bottle4" parent="Items" instance=ExtResource("6_fcfvj")]
+position = Vector2(-224, 389)
+item_type = 1
+
+[node name="bag3" parent="Items" instance=ExtResource("6_fcfvj")]
+position = Vector2(-488, 409)
+
+[node name="bottle5" parent="Items" instance=ExtResource("6_fcfvj")]
+position = Vector2(-533, 223)
+item_type = 1
+
+[node name="bag4" parent="Items" instance=ExtResource("6_fcfvj")]
+position = Vector2(-360, 174)
+
+[node name="bag5" parent="Items" instance=ExtResource("6_fcfvj")]
+position = Vector2(-539, 39)
+
+[node name="bottle6" parent="Items" instance=ExtResource("6_fcfvj")]
+position = Vector2(-288, 4)
+
+[node name="bottle7" parent="Items" instance=ExtResource("6_fcfvj")]
+position = Vector2(-164, -129)
+
+[node name="bag6" parent="Items" instance=ExtResource("6_fcfvj")]
+position = Vector2(40, -83)
 
 [node name="EndTimer" type="Timer" parent="."]
 wait_time = 2.0
