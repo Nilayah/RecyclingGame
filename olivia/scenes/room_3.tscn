@@ -12,7 +12,7 @@
 [ext_resource type="TileSet" uid="uid://dh0310eh7u4hm" path="res://olivia/tilesets/tile23.tres" id="10_aslkb"]
 [ext_resource type="TileSet" uid="uid://pyd1tidwr0yw" path="res://olivia/tilesets/tile24.tres" id="11_4uoay"]
 [ext_resource type="TileSet" uid="uid://s5s7ct5kjsmh" path="res://olivia/tilesets/tile25.tres" id="12_6owcd"]
-[ext_resource type="TileSet" uid="uid://ds4rv8u3pbx0i" path="res://olivia/tilesets/Interiors.tres" id="13_aldbb"]
+[ext_resource type="TileSet" uid="uid://cmub43igu27an" path="res://olivia/tilesets/Interiors.tres" id="13_aldbb"]
 [ext_resource type="Texture2D" uid="uid://hyj7e5a05udg" path="res://assets/bathroom/toilet.png" id="14_c3iwi"]
 
 [node name="Room3" type="Node2D"]
