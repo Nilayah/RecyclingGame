@@ -56,7 +56,7 @@ grow_vertical = 2
 script = ExtResource("1_fc3nb")
 
 [node name="main_panel" type="Panel" parent="."]
-modulate = Color(1, 1, 1, 0.811765)
+modulate = Color(1, 1, 1, 0.866667)
 layout_mode = 1
 offset_left = -2428.0
 offset_top = -1827.0
@@ -68,9 +68,9 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_csg5f")
 [node name="title_panel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = -409.0
-offset_top = -173.0
+offset_top = -209.0
 offset_right = 404.0
-offset_bottom = -84.0
+offset_bottom = -120.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_bd3gc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -81,9 +81,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -219.0
-offset_top = -65.0
+offset_top = -105.0
 offset_right = 219.0
-offset_bottom = 281.0
+offset_bottom = 241.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -126,10 +126,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -402.0
-offset_top = -156.5
-offset_right = 404.0
-offset_bottom = -93.5
+offset_left = -404.0
+offset_top = -192.0
+offset_right = 402.0
+offset_bottom = -129.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)

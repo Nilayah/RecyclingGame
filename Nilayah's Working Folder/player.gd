@@ -30,7 +30,7 @@ var can_move: bool = false
 
 func _ready():
 	# Planets
-	planet_container.visible = true
+	planet_container.visible = false
 	for i in max_health:
 		list_planets.append(planet_container.get_child(i))
 	
