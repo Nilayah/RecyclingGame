@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://onoq5wcbhwnh"]
 
-[ext_resource type="Script" uid="uid://bfh05ysjmtouo" path="res://scripts/pickup_item.gd" id="1_aorx0"]
-[ext_resource type="Texture2D" uid="uid://g3mqcb4xavu5" path="res://assets/bins and recycle items/recycle_items.png" id="2_v0ach"]
-[ext_resource type="AudioStream" uid="uid://kfl0uw5y774j" path="res://assets/sfx/pickup_trash.ogg" id="3_p4nwc"]
-[ext_resource type="AudioStream" uid="uid://bla1x8anly2r2" path="res://assets/sfx/pickup_recycling.ogg" id="4_lypid"]
+[ext_resource type="Script" uid="uid://dqtft35k2sun6" path="res://scripts/pickup_item.gd" id="1_8130n"]
+[ext_resource type="Texture2D" uid="uid://g3mqcb4xavu5" path="res://assets/bins and recycle items/recycle_items.png" id="2_s4gpa"]
+[ext_resource type="AudioStream" uid="uid://kfl0uw5y774j" path="res://assets/sfx/pickup_trash.ogg" id="3_takdo"]
+[ext_resource type="AudioStream" uid="uid://bla1x8anly2r2" path="res://assets/sfx/pickup_recycling.ogg" id="4_du5dg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ltp3i"]
 radius = 6.66667
@@ -175,11 +175,11 @@ _data = {
 
 [node name="zeke_pickup_item" type="Area2D"]
 scale = Vector2(0.3, 0.3)
-script = ExtResource("1_aorx0")
+script = ExtResource("1_8130n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -30)
-texture = ExtResource("2_v0ach")
+texture = ExtResource("2_s4gpa")
 region_enabled = true
 region_rect = Rect2(1, -1, 19, 65)
 
@@ -188,11 +188,11 @@ position = Vector2(0, -20)
 shape = SubResource("CapsuleShape2D_ltp3i")
 
 [node name="pickup_trash_sfx" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_p4nwc")
+stream = ExtResource("3_takdo")
 bus = &"SFX"
 
 [node name="pickup_recyclable_sfx" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_lypid")
+stream = ExtResource("4_du5dg")
 bus = &"SFX"
 
 [node name="pickup_sfx_animation" type="AnimationPlayer" parent="."]
