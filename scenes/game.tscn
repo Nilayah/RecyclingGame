@@ -59,6 +59,7 @@ position = Vector2(-61, -32)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 scale = Vector2(2, 2)
 zoom = Vector2(5, 5)
+position_smoothing_enabled = true
 
 [node name="Room" parent="." instance=ExtResource("5_k7wi2")]
 z_index = -5
