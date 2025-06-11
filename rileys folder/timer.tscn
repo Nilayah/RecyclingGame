@@ -31,9 +31,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_8ug00")
 [node name="gametimer" type="Timer" parent="."]
 
 [node name="firsttimer" type="Timer" parent="."]
-wait_time = 16.0
-one_shot = true
-autostart = true
+wait_time = 0.001
 
 [connection signal="timeout" from="gametimer" to="." method="_on_gametimer_timeout"]
 [connection signal="timeout" from="firsttimer" to="." method="_on_firsttimer_timeout"]
