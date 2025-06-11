@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var label: Label = $Label
+@onready var white_background: Panel = $white_background
 
 var step: int = 0
 const Player = preload("res://player/player.gd")
@@ -11,6 +12,7 @@ var triggered = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	label.visible = false
+	white_background.visible = false
 	
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
@@ -19,4 +21,6 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _process(delta: float) -> void:
 	if player_in_area and player:
-		label.visible = player.current_health != 3
+		if player.current_health != 3:
+			label.visible = true
+			white_background.visible = true

@@ -3,6 +3,7 @@ extends Area2D
 @onready var timer: Timer = $Timer
 @onready var gr_trash: Label = $GrTrash
 @onready var come_back: Label = $ComeBack
+@onready var white_background: Panel = $white_background
 
 var step: int = 0
 const Player = preload("res://player/player.gd")
@@ -13,6 +14,7 @@ var triggered = false
 func _ready() -> void:
 	gr_trash.visible = false
 	come_back.visible = false
+	white_background.visible = false
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
@@ -23,6 +25,7 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	triggered = true
 	gr_trash.visible = true
+	white_background.visible = true
 	
 	timer.wait_time = 2
 	player.can_move = false
@@ -39,6 +42,7 @@ func _on_timer_timeout() -> void:
 			timer.start()
 		1:
 			come_back.visible = false
+			white_background.visible = false
 			timer.stop()  # All done
 			player.can_move = true
 	step += 1

@@ -1,10 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsa3uqrfl58iv"]
+[gd_scene load_steps=5 format=3 uid="uid://dsa3uqrfl58iv"]
 
 [ext_resource type="Script" uid="uid://behsmi0eknr65" path="res://dialogues/wrong_bin_dialogue.gd" id="1_4te3m"]
 [ext_resource type="FontFile" uid="uid://rdldim0q2d46" path="res://olivia/assets/Kenney Future Narrow.ttf" id="1_cb4j1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4te3m"]
 size = Vector2(34, 22)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4te3m"]
+bg_color = Color(0.881937, 0.881937, 0.881937, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="wrong_bin_dialogue" type="Area2D"]
 script = ExtResource("1_4te3m")
@@ -15,16 +22,24 @@ shape = SubResource("RectangleShape2D_4te3m")
 
 [node name="Label" type="Label" parent="."]
 z_index = 1
-offset_left = -25.0
-offset_top = -55.0
-offset_right = 165.0
-offset_bottom = 122.0
+offset_left = -27.0
+offset_top = -40.0
+offset_right = 318.0
+offset_bottom = 137.0
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_cb4j1")
 theme_override_font_sizes/font_size = 24
-text = "Looks like you lost a heart when you put an item in the wrong bin"
+text = "Looks like I lost a heart when I put an item in the wrong bin"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="white_background" type="Panel" parent="."]
+z_index = -1
+offset_left = -31.0
+offset_top = -43.0
+offset_right = 49.0
+offset_bottom = -19.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4te3m")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
