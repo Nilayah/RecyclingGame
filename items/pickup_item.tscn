@@ -6,8 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://bla1x8anly2r2" path="res://assets/sfx/pickup_recycling.ogg" id="4_d61ir"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ltp3i"]
-radius = 30.0
-height = 60.0
+radius = 36.6667
+height = 79.9999
 
 [sub_resource type="Animation" id="Animation_ubykd"]
 length = 0.001

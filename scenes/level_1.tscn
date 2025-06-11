@@ -49,7 +49,7 @@ position = Vector2(-39, -208)
 bin_type = 1
 
 [node name="TrashBin2" parent="Bins" instance=ExtResource("5_4nkto")]
-position = Vector2(-487, 382)
+position = Vector2(-358, 245)
 
 [node name="Items" type="Node2D" parent="."]
 
