@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://ygvb1sdudvy4" path="res://assets/sfx/toss_trash.ogg" id="5_4lxkc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_46t4j"]
-size = Vector2(20, 25)
+size = Vector2(27, 32)
 
 [node name="Bin" type="Area2D"]
 scale = Vector2(0.5, 0.5)
@@ -19,7 +19,7 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_k7d78")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -13.5)
+position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_46t4j")
 
 [node name="life_lost" type="AudioStreamPlayer2D" parent="."]

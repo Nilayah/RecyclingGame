@@ -42,7 +42,7 @@ func _process(delta: float) -> void:
 script = ExtResource("1_5newe")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 16.0
+wait_time = 15.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -120,15 +120,15 @@ autowrap_mode = 2
 
 [node name="AttemptWrongBin" type="Label" parent="Labels"]
 z_index = 1
-offset_left = 52.0
-offset_top = -94.0
-offset_right = 452.0
-offset_bottom = 23.0
+offset_left = 55.0
+offset_top = -91.0
+offset_right = 360.0
+offset_bottom = -26.0
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_r5xo6")
 theme_override_font_sizes/font_size = 24
-text = "I wonder what happens when you put a recyclable in the trash bin"
+text = "Put the recyclable in the wrong bin"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -252,14 +252,14 @@ position = Vector2(-58, 19)
 item_type = 1
 
 [node name="bag" parent="BinsAndTrash" instance=ExtResource("18_35g1i")]
-position = Vector2(98, 83)
+position = Vector2(0, 32)
 
 [node name="bottle2" parent="BinsAndTrash" instance=ExtResource("18_35g1i")]
 position = Vector2(45, -75)
 item_type = 1
 
 [node name="TrashDialogue" parent="." instance=ExtResource("19_dypgg")]
-position = Vector2(15, 81)
+position = Vector2(-4, 81)
 scale = Vector2(0.6, 0.6)
 
 [node name="RecycleDialogue" parent="." instance=ExtResource("20_8qcs6")]
@@ -269,7 +269,7 @@ position = Vector2(33, 58)
 position = Vector2(-15, -67)
 
 [node name="wrong_bin_dialogue" parent="." instance=ExtResource("23_bt5mj")]
-position = Vector2(7, -100)
+position = Vector2(6, -99)
 
 [node name="EndTimer" type="Timer" parent="."]
 wait_time = 5.0

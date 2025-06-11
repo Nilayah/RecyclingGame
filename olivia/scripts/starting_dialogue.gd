@@ -6,6 +6,7 @@ extends Node2D
 @onready var bottle_floor: Label = $BottleFloor
 @onready var recycling: Label = $Recycling
 @onready var welcome: Label = $Welcome
+@onready var white_background: Panel = $white_background
 
 var step: int = 0
 
@@ -37,5 +38,6 @@ func _on_timer_timeout() -> void:
 			timer.start()
 		3:
 			recycling.visible = false
+			white_background.visible = false
 			timer.stop()  # All done
 	step += 1

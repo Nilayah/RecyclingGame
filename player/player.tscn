@@ -263,7 +263,7 @@ parameters/idle/blend_position = Vector2(0, 1)
 parameters/walk/blend_position = Vector2(0, 0)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 16.0
+wait_time = 15.0
 one_shot = true
 autostart = true
 
