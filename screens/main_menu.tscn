@@ -58,10 +58,10 @@ script = ExtResource("1_t3bh0")
 [node name="main_panel" type="Panel" parent="."]
 modulate = Color(1, 1, 1, 0.866667)
 layout_mode = 1
-offset_left = -2428.0
-offset_top = -1827.0
-offset_right = 1426.0
-offset_bottom = 3040.0
+offset_left = -671.0
+offset_top = -513.0
+offset_right = 388.0
+offset_bottom = 892.0
 scale = Vector2(1.26298, 0.788059)
 theme_override_styles/panel = SubResource("StyleBoxTexture_csg5f")
 
